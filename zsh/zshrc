@@ -47,3 +47,10 @@ $HOME/perl5/bin(N-/)
 $path
 )
 
+#EDITORの設定、自分で入れたvimがあればそれを使う
+if test -e /usr/local/bin/vim
+then
+    export EDITOR=/usr/local/bin/vim
+else
+    export EDITOR=vim
+fi
