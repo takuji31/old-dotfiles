@@ -34,7 +34,7 @@ plugins=(git perl cpanm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
-#pythonbrew
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+link=`ls -l ~/.zshrc | sed -e "s/^l.*-> //"`
+export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
+export PATH="$DOTFILES/git/bin/:$PATH"
