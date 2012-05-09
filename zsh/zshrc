@@ -41,8 +41,9 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 typeset -U path
 path=(
 $DOTFILES/git/bin(N-/)
-$HOME/local/bin(N-/)
+$HOME/.nodebrew/current/bin(N-/)
 $HOME/perl5/bin(N-/)
+$HOME/local/bin(N-/)
 /usr/local/bin
 $path
 )
