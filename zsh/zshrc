@@ -37,4 +37,13 @@ source $ZSH/oh-my-zsh.sh
 
 link=`ls -l ~/.zshrc | sed -e "s/^l.*-> //"`
 export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
-export PATH="$DOTFILES/git/bin/:$PATH"
+
+typeset -U path
+path=(
+$DOTFILES/git/bin(N-/)
+$HOME/local/bin(N-/)
+$HOME/perl5/bin(N-/)
+/usr/local/bin
+$path
+)
+
