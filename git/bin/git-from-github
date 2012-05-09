@@ -1,0 +1,19 @@
+#!/bin/sh
+
+project=$1
+to_dir=$2
+github_user="takuji31"
+
+
+if test "$project" = ""
+then
+    echo "Project name required!"
+    exit
+fi
+
+if test "$to_dir" = ""
+then
+    git clone git@github.com:$github_user/$project
+else
+    git clone git@github.com:$github_user/$project $to_dir
+fi
