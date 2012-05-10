@@ -9,3 +9,9 @@ linux*)
     ;;
 esac
 
+if test ! -e $HOME/.zshrc
+then
+    ln -s $D/zsh/zshrc $HOME/.zshrc
+else
+    echo ".zshrc already exists"
+fi
