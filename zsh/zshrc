@@ -47,11 +47,15 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
 typeset -U path
 path=(
+/android-sdk/tools(N-/)
+/android-sdk/platform-tools(N-/)
 $DOTFILES/git/bin(N-/)
 $HOME/.nodebrew/current/bin(N-/)
+$HOME/bin(N-/)
 $HOME/perl5/bin(N-/)
 $HOME/local/bin(N-/)
-/usr/local/bin
+/opt/local/bin(N-/)
+/usr/local/bin(N-/)
 $path
 )
 
