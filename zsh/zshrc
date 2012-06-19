@@ -11,7 +11,9 @@ setopt auto_pushd
 ## 移動先を検索するリスト。
 cdpath=(~)
 ## ディレクトリが変わったらディレクトリスタックを表示。
-chpwd_functions=($chpwd_functions dirs)
+typeset -ga chpwd_functions
+typeset -ga precmd_functions
+typeset -ga preexec_functions
 
 ## ヒストリファイルにコマンドラインだけではなく実行時刻と実行時間も保存する。
 setopt extended_history
@@ -66,7 +68,6 @@ setopt extended_glob
 setopt mark_dirs
 setopt pushd_ignore_dups
 setopt list_packed
-setopt prompt_subst
 #重複した履歴は登録しない
 setopt hist_ignore_all_dups
 #スペースから始まる履歴を登録しない
@@ -87,6 +88,8 @@ autoload -Uz compinit
 compinit
 autoload -Uz zmv
 
+autoload -Uz vcs_info
+
 
 #履歴
 export HISTFILE=$HOME/.zsh_history
@@ -97,6 +100,8 @@ export SAVEHIST=1000000
 #lsコマンドに色をつける
 export CLICOLOR=true
 
+source $DOTFILES/zsh/hook.zsh
+source $DOTFILES/zsh/prompt.zsh
 
 #perlbrew
 [[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
