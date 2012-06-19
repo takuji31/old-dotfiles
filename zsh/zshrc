@@ -88,7 +88,12 @@ autoload -Uz compinit
 compinit
 autoload -Uz zmv
 
+#バージョン管理システムの状態をうまいこと表示してくれる関数
 autoload -Uz vcs_info
+#どうせgitとsvnしか使わないからそれだけ有効に
+zstyle 'vcs_info:*' enable git svn
+zstyle ':vcs_info:*' formats '%F{cyan}%s[%b]%f'
+zstyle ':vcs_info:*' actionformats '%F{red}%s[%b|%a]%f'
 
 
 #履歴

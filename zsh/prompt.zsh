@@ -6,6 +6,14 @@ SPROMPT="%{${fg[red]}%}%r じゃね? [n,y,a,e]:%{${reset_color}%} "
 function update_prompt() {
     PROMPT="%F{red}%n@%m%f %F{magenta}%~%f %F{yellow}%D{%y/%m/%d %H:%M:%S}%f $(check_git_changed) "$'\n'"%F{red}%#%f "
 
+    LANG=ja_JP.utf8 vcs_info
+    if [[ -n "$vcs_info_msg_0_" ]];
+    then
+        RPROMPT="$vcs_info_msg_0_"
+    else
+        RPROMPT=""
+    fi
+
 }
 
 
