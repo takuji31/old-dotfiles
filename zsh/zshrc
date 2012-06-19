@@ -37,32 +37,6 @@ setopt prompt_percent
 ## コピペしやすいようにコマンド実行後は右プロンプトを消す。
 setopt transient_rprompt
 
-## 256色生成用便利関数
-### red: 0-5
-### green: 0-5
-### blue: 0-5
-color256()
-{
-    local red=$1; shift
-    local green=$2; shift
-    local blue=$3; shift
-
-    echo -n $[$red * 36 + $green * 6 + $blue + 16]
-}
-
-fg256()
-{
-    echo -n $'\e[38;5;'$(color256 "$@")"m"
-}
-
-bg256()
-{
-    echo -n $'\e[48;5;'$(color256 "$@")"m"
-}
-
-
-
-
 
 setopt extended_glob
 setopt mark_dirs
