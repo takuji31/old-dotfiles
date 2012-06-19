@@ -38,28 +38,40 @@ setopt prompt_percent
 setopt transient_rprompt
 
 
+#拡張globを有効に
 setopt extended_glob
+#ファイル名の展開時にディレクトリなら/を付加する
 setopt mark_dirs
+#pushdで重複させない
 setopt pushd_ignore_dups
+#補完リストを詰める
 setopt list_packed
 #重複した履歴は登録しない
 setopt hist_ignore_all_dups
 #スペースから始まる履歴を登録しない
 setopt hist_ignore_space
+#履歴を保存する時、既に同じコマンドがあったら古い方を削除する
 setopt hist_save_nodups
+#コマンドのスペルチェック
 setopt correct
 #勝手に/を消さない
 setopt noautoremoveslash
+#補完の度にbeep音を鳴らさない
 setopt nolistbeep
+#補完時にエイリアスを展開してチェックする
 setopt complete_aliases
 #補完をメニューにする
 setopt auto_menu
+#補完候補にファイルの種類も表示
 setopt list_types
 
+#色を簡単に指定するための関数
 autoload -U colors
 colors
+#補完を有効に
 autoload -Uz compinit
 compinit
+#zmv(mvコマンドの拡張版？)をロードする
 autoload -Uz zmv
 
 #大文字小文字を区別しない
@@ -71,7 +83,9 @@ zstyle ':completion:*:default' menu select=1
 autoload -Uz vcs_info
 #どうせgitとsvnしか使わないからそれだけ有効に
 zstyle 'vcs_info:*' enable git svn
+#通常の表示
 zstyle ':vcs_info:*' formats '%F{cyan}%s[%b]%f'
+#アクション中(マージ、リベースなど)の表示
 zstyle ':vcs_info:*' actionformats '%F{red}%s[%b|%a]%f'
 
 
@@ -84,6 +98,7 @@ export SAVEHIST=1000000
 #lsコマンドに色をつける
 export CLICOLOR=true
 
+#外部ファイルの読み込み
 source $DOTFILES/zsh/hook.zsh
 source $DOTFILES/zsh/prompt.zsh
 
