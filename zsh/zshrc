@@ -88,6 +88,11 @@ autoload -Uz compinit
 compinit
 autoload -Uz zmv
 
+#大文字小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#補完メニューを矢印やらTABやらで選択できるようにする
+zstyle ':completion:*:default' menu select=1
+
 #バージョン管理システムの状態をうまいこと表示してくれる関数
 autoload -Uz vcs_info
 #どうせgitとsvnしか使わないからそれだけ有効に
