@@ -82,11 +82,20 @@ zstyle ':completion:*:default' menu select=1
 #バージョン管理システムの状態をうまいこと表示してくれる関数
 autoload -Uz vcs_info
 #どうせgitとsvnしか使わないからそれだけ有効に
-zstyle 'vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git svn
 #通常の表示
-zstyle ':vcs_info:*' formats '%F{cyan}%s[%b]%f'
+zstyle ':vcs_info:*' formats '%F{red}[%r:%b] chg:[%c%u]%f'
 #アクション中(マージ、リベースなど)の表示
-zstyle ':vcs_info:*' actionformats '%F{red}%s[%b|%a]%f'
+zstyle ':vcs_info:*' actionformats '%F{yellow}%s[%b|%a]%f'
+#vcs_infoの変数の数らしいけどいまいちよくわからないというか0しか使ってない
+zstyle ':vcs_info:*' max-exports 3
+#リビジョン取得する
+zstyle ':vcs_info:*' get-revision true
+#変更をチェックする
+zstyle ':vcs_info:*' check-for-changes true
+#addしてる/してないファイルがある時に表示する文字列
+zstyle ':vcs_info:*' stagedstr '*'
+zstyle ':vcs_info:*' unstagedstr '?'
 
 
 #履歴
