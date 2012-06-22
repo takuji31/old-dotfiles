@@ -82,6 +82,9 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932
 set fileformats=unix,dos,mac
 set encoding=utf-8
 
+"バックアップをとらない
+set nobackup
+
 "上下の物理行移動と論理行移動を入れ替えます
 noremap j gj
 noremap k gk
