@@ -112,6 +112,7 @@ export CLICOLOR=true
 #外部ファイルの読み込み
 source $DOTFILES/zsh/prompt.zsh
 source $DOTFILES/zsh/alias.zsh
+source $DOTFILES/zsh/hook.zsh
 
 #perlbrew
 [[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
