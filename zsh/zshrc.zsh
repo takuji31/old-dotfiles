@@ -96,8 +96,8 @@ zstyle ':vcs_info:*' get-revision true
 #変更をチェックする
 zstyle ':vcs_info:*' check-for-changes true
 #addしてる/してないファイルがある時に表示する文字列
-zstyle ':vcs_info:*' stagedstr '*'
-zstyle ':vcs_info:*' unstagedstr '?'
+zstyle ':vcs_info:*' stagedstr 'S'
+zstyle ':vcs_info:*' unstagedstr '*'
 
 
 #履歴
