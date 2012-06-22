@@ -11,7 +11,7 @@ bindkey -e
 setopt auto_pushd
 ## カレントディレクトリ中に指定されたディレクトリが見つからなかった場合に
 ## 移動先を検索するリスト。
-cdpath=(~ ~/project)
+#cdpath=(~ ~/project)
 ## フック関数を入れる変数
 typeset -ga chpwd_functions
 typeset -ga precmd_functions
