@@ -63,7 +63,7 @@ set incsearch
 "Listモード有効
 set list
 "Listモードの文字
-set listchars=tab:>-,trail:-,nbsp:%,extends:>>,precedes:<<
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 "対応するカッコを表示
 set showmatch
 "この2つで小文字ならスマートケース、大文字なら通常検索に設定
