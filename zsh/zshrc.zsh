@@ -95,7 +95,7 @@ zstyle ':vcs_info:*' max-exports 3
 zstyle ':vcs_info:*' get-revision true
 #変更をチェックする
 zstyle ':vcs_info:*' check-for-changes true
-#addしてる/してないファイルがある時に表示する文字列
+#addしてる/してない変更がある時に表示する文字列
 zstyle ':vcs_info:*' stagedstr 'S'
 zstyle ':vcs_info:*' unstagedstr '*'
 
