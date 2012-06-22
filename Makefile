@@ -4,10 +4,10 @@ setup:  $(HOME)/.zshenv \
 
 
 $(HOME)/.zshenv:
-	ln -s `pwd`/zsh/zshenv $(HOME)/.zshenv
+	ln -s `pwd`/zsh/zshenv.zsh $(HOME)/.zshenv
 
 $(HOME)/.zshrc:
-	ln -s `pwd`/zsh/zshrc $(HOME)/.zshrc
+	ln -s `pwd`/zsh/zshrc.zsh $(HOME)/.zshrc
 
 $(HOME)/.gvimrc:
 	ln -s `pwd`/vim/gvimrc $(HOME)/.gvimrc
