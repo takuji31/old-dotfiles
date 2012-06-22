@@ -80,3 +80,6 @@ export EMAIL=takuji@senchan.jp
 
 #MySQLのプロンプト
 export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
+
+
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
