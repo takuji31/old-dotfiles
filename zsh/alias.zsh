@@ -18,6 +18,7 @@ alias df="df -h"
 alias su="su -l"
 
 alias s=screen
+#TODO tmuxのエイリアスもうちょい整理
 alias tt="tmux -2 new-session"
 alias tr="tmux attach-session"
 alias tv="tmux new-window vim "
@@ -26,3 +27,5 @@ alias vi="vim"
 alias q="exit"
 alias sudo="sudo "
 alias zmv='noglob zmv -W'
+
+#TODO gitのalias書く
