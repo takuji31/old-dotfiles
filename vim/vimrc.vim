@@ -112,7 +112,6 @@ noremap <C-E>   <END>
 
 ";と:を入れ替え
 noremap ; :
-noremap : ;
 
 " Perltidy
 map ,pt <Esc>:%! perltidy<CR>
