@@ -250,3 +250,5 @@ let g:vimfiler_safe_mode_by_default = 0
 nnoremap ff :<C-u>VimFilerSplit<CR>
 nnoremap fe :<C-u>VimFiler<CR>
 
+"vim-powerline
+let g:Powerline_symbols = 'fancy'
