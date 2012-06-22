@@ -3,6 +3,18 @@
 ## 基本 ##
 #Emacsモード
 bindkey -e
+#キーバインド
+bindkey "^[[1~" beginning-of-line # Home gets to line head
+bindkey "^[[4~" end-of-line # End gets to line end
+bindkey "^[[3~" delete-char # Del
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+bindkey "\\ep" history-beginning-search-backward-end
+bindkey "\\en" history-beginning-search-forward-end
+bindkey "\e[Z" reverse-menu-complete
 
 
 
@@ -80,6 +92,10 @@ autoload -Uz zmv
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #補完メニューを矢印やらTABやらで選択できるようにする
 zstyle ':completion:*:default' menu select=1
+#URL貼り付け時にクオートする
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
 
 #バージョン管理システムの状態をうまいこと表示してくれる関数
 autoload -Uz vcs_info
