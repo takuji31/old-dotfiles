@@ -10,4 +10,4 @@ $(HOME)/.zshrc:
 	ln -s `pwd`/zsh/zshrc.zsh $(HOME)/.zshrc
 
 $(HOME)/.gvimrc:
-	ln -s `pwd`/vim/gvimrc $(HOME)/.gvimrc
+	ln -s `pwd`/vim/gvimrc.vim $(HOME)/.gvimrc
