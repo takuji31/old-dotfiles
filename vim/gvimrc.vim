@@ -1,3 +1,3 @@
 colorscheme wombat256patched
 
-set guifont=Ricty:h18
+set guifont=Ricty:h16
