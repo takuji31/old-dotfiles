@@ -48,7 +48,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
-
+NeoBundle 'thinca/vim-quickrun'
 filetype plugin indent on
 syntax enable
 
