@@ -8,7 +8,7 @@ function update_prompt() {
     LANG=ja_JP.utf8 vcs_info
     if [[ -n "$vcs_info_msg_0_" ]];
     then
-        VCS_MESSAGE=" $vcs_info_msg_0_"
+        VCS_MESSAGE=" $vcs_info_msg_0_$(git_not_pushed)"
     else
         VCS_MESSAGE=""
     fi
