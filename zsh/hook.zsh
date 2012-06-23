@@ -11,7 +11,7 @@ function git_not_pushed() {
         return 0
       fi
     done
-    echo " ↑"
+    echo " %F{red}↑%f"
   fi
   return 0
 }
