@@ -19,7 +19,7 @@ snippet     ps14
 	${0}
 
 snippet     pkg
-	package `MakePackageName()`;
+	package `PerlPackageName()`;
 	use strict;
 	use warnings;
 	use 5.010_000;
@@ -27,7 +27,7 @@ snippet     pkg
 	1;
 
 snippet     pkg12
-	package `MakePackageName()`;
+	package `PerlPackageName()`;
 	use 5.012_001;
 	use warnings;
 	${0}
@@ -37,7 +37,7 @@ snippet     pkg12
 snippet     pkg14
 	use 5.014_001;
 	use warnings;
-	package `MakePackageName()` {
+	package `PerlPackageName()` {
 		${0}
 	}
 	1;
@@ -147,7 +147,7 @@ snippet     on
 	};
 
 snippet     ns
-	`MakePackageName()`${0}
+	`PerlPackageName()`${0}
 #For container
 #TODO 書く
 

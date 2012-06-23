@@ -49,6 +49,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
 NeoBundle 'thinca/vim-quickrun'
+
 filetype plugin indent on
 syntax enable
 
@@ -141,6 +142,13 @@ highlight CursorLine ctermbg=black guibg=black
 
 "ESC2回押しで検索のハイライト消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
+"パス名からいいようにパッケージ名作ってくれる関数、PerlのSnippetで使ってるよ
+func! PerlPackageName()
+  let path = substitute(expand("%:p"),"\\","/","g")
+  let str  = substitute(path , '.*lib/\(.\+\)\.pm','\1', "")
+  return substitute(str, "/", "::", "g")
+endfunc
 
 "zencoding.vim
 let g:user_zen_settings = {
