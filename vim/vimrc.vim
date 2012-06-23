@@ -43,6 +43,7 @@ NeoBundle 'ujihisa/neco-look'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'scrooloose/nerdcommenter.git'
+NeoBundle 'othree/eregex.vim'
 
 filetype plugin indent on
 syntax enable
