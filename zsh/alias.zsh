@@ -19,8 +19,8 @@ alias su="su -l"
 
 alias s=screen
 #TODO tmuxのエイリアスもうちょい整理
-alias tt="tmux -2 new-session"
-alias tr="tmux attach-session"
+alias tn="tmux -2 new-session"
+alias ta="tmux attach-session"
 alias tv="tmux new-window vim "
 
 alias vi="vim"
