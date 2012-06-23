@@ -44,6 +44,10 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'othree/eregex.vim'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'basyura/twibill.vim'
+NeoBundle 'basyura/TweetVim'
 
 filetype plugin indent on
 syntax enable
