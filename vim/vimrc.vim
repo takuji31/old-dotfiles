@@ -135,6 +135,9 @@ hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
+"ESC2回押しで検索のハイライト消去
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
 "zencoding.vim
 let g:user_zen_settings = {
             \    'indentation' : '    ',
