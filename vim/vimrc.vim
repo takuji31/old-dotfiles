@@ -262,12 +262,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns = {
-            \ 'php'  :  '[^. \t]->\h\w*\|\$\h\w*\|\%(=\s*new\|extends\)\s\+\|\h\w*::',
-            \ 'perl' :  '\%(\h\w*\|)\)->\h\w*\|\h\w*::',
-            \ 'c'    :  '\h\w\+\|\%(\h\w*\|)\)\%(\.\|->\)\h\w*',
-            \ 'cpp'  :  '\%(\h\w*\|)\)\%(\.\|->\)\h\w*\|\h\w*::',
-            \ }
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "ダイナミック補完要らないんだけど無効にする方法見つからなかったからとりあえずごまかす
 let g:dbext_default_profile_mysql = "type=MYSQL:user=root:dbname=mysql"
