@@ -93,6 +93,9 @@ set encoding=utf-8
 "バックアップをとらない
 set nobackup
 
+"ステータスラインを表示
+set laststatus=2
+
 "上下の物理行移動と論理行移動を入れ替えます
 noremap j gj
 noremap k gk
