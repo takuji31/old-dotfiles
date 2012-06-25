@@ -115,11 +115,11 @@ nnoremap gc `[v`]
 vnoremap gc :<C-u>normal gc<Enter>
 onoremap gc :<C-u>normal gc<Enter>
 
-"Ctrl-A/Eで最初と最後に
-inoremap <C-A>  <ESC>^i
-""<END>がきかないことがあるのでこうしている
-inoremap <C-E>  <ESC>$a
-noremap <C-E>   <END>
+"Ctrl-Aで最初に、Ctrl-Eは後で設定してる
+inoremap <C-A>  <Home>
+"ノーマルモードでCtrl-A/E
+noremap <C-E> <END>
+noremap <C-A> <Home>
 
 ";と:を入れ替え
 noremap ; :
@@ -249,7 +249,7 @@ inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-e> pumvisible() ? neocomplcache#cancel_popup() : "\<End>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
