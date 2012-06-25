@@ -59,7 +59,7 @@ set ambiwidth=double
 "256色有効
 set t_Co=256
 "色の設定
-colorscheme wombat256
+colorscheme wombat256patched
 "backspaceで消せる文字の設定
 set backspace=eol,indent,start
 "C言語タイプのインデントをオン
