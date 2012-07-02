@@ -248,7 +248,7 @@ inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-y>  neocomplcache#smart_close_popup()."\<C-y>"
 inoremap <expr><C-e> pumvisible() ? neocomplcache#cancel_popup() : "\<End>"
 
 " Enable omni completion.
