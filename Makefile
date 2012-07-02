@@ -1,8 +1,10 @@
-setup:  $(HOME)/.zshenv \
+setup:  $(HOME)/.zshenv\
         $(HOME)/.zshrc\
         $(HOME)/.gvimrc\
         $(HOME)/.vimrc\
-        $(HOME)/.vim
+        $(HOME)/.vim\
+        $(HOME)/.gitconfig\
+        $(HOME)/.gitignore
 
 
 $(HOME)/.zshenv:
@@ -19,4 +21,10 @@ $(HOME)/.vimrc:
 
 $(HOME)/.vim:
 	ln -sf `pwd`/vim $(HOME)/.vim
+
+$(HOME)/.gitconfig:
+	ln -sf `pwd`/git/gitconfig $(HOME)/.gitconfig
+
+$(HOME)/.gitignore:
+	ln -sf `pwd`/git/gitignore $(HOME)/.gitignore
 
