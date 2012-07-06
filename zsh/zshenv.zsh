@@ -19,6 +19,7 @@ $HOME/bin(N-/)
 /android-sdk/tools(N-/)
 /android-sdk/platform-tools(N-/)
 /Applications/MacVim.app/Contents/MacOS(N-/)
+/usr/local/sbin(N-/)
 /opt/local/bin(N-/)
 /usr/local/bin(N-/)
 $path
