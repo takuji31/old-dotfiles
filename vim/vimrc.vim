@@ -51,6 +51,7 @@ NeoBundle 'basyura/TweetVim'
 NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'Markdown'
+NeoBundle 'nginx.vim'
 
 filetype plugin indent on
 syntax enable
