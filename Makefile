@@ -3,6 +3,7 @@ setup:  $(HOME)/.zshenv\
         $(HOME)/.gvimrc\
         $(HOME)/.vimrc\
         $(HOME)/.vim\
+		$(HOME)/.tmux.conf\
         $(HOME)/.gitconfig\
         $(HOME)/.gitignore
 
@@ -21,6 +22,9 @@ $(HOME)/.vimrc:
 
 $(HOME)/.vim:
 	ln -sf `pwd`/vim $(HOME)/.vim
+
+$(HOME)/.tmux.conf:
+	ln -sf `pwd`/tmux/tmux.conf $(HOME)/.tmux.conf
 
 $(HOME)/.gitconfig:
 	ln -sf `pwd`/git/gitconfig $(HOME)/.gitconfig
