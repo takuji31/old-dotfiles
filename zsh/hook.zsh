@@ -15,4 +15,4 @@ function git_not_pushed() {
   fi
   return 0
 }
-chpwd_functions+=_show_dirname_on_screen_title
+precmd_functions+=_show_dirname_on_screen_title
