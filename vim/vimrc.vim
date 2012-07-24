@@ -330,3 +330,7 @@ nnoremap <Leader>gb :<C-u>Gblame<CR>
 nnoremap <leader>gp :<C-u>Git push
 nnoremap <leader>gP :<C-u>Git pull
 
+" -------------------------------------------------------------------------------------
+" quickrun
+" -------------------------------------------------------------------------------------
+nnoremap <Leader>q :<C-u>QuickRun -args<Space>
