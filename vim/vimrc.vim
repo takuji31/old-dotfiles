@@ -157,6 +157,10 @@ func! PerlPackageName()
   return substitute(str, "/", "::", "g")
 endfunc
 
+" .psgi,.tはperl
+autocmd BufNewFile,BufRead *.psgi set filetype=perl
+autocmd BufNewFile,BufRead *.t set filetype=perl
+
 "zencoding.vim
 let g:user_zen_settings = {
             \    'indentation' : '    ',
