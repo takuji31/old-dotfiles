@@ -130,12 +130,3 @@ source $DOTFILES/zsh/prompt.zsh
 source $DOTFILES/zsh/alias.zsh
 source $DOTFILES/zsh/hook.zsh
 
-#perlbrew
-[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
-
-if [[ -s /usr/local/perlbrew/perlbrew/etc/bashrc ]];
-then
-    export PERLBREW_ROOT=/usr/local/perlbrew/perlbrew
-    export PERLBREW_HOME=/usr/local/perlbrew/home
-    source /usr/local/perlbrew/perlbrew/etc/bashrc
-fi
