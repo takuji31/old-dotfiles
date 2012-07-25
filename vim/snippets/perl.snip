@@ -3,18 +3,12 @@ snippet     pscript
 	#!/usr/bin/env perl
 	use strict;
 	use warnings;
-	use 5.010_000;
+	use 5.010_001;
 	${0}
 
-snippet     ps12
+snippet     ps16
 	#!/usr/bin/env perl
-	use 5.012_001;
-	use warnings;
-	${0}
-
-snippet     ps14
-	#!/usr/bin/env perl
-	use 5.014_001;
+	use 5.016_000;
 	use warnings;
 	${0}
 
@@ -22,22 +16,14 @@ snippet     pkg
 	package `PerlPackageName()`;
 	use strict;
 	use warnings;
-	use 5.010_000;
+	use 5.010_001;
 	${0}
 	1;
 
-snippet     pkg12
-	package `PerlPackageName()`;
-	use 5.012_001;
-	use warnings;
-	${0}
-	1;
-
-
-snippet     pkg14
-	use 5.014_001;
-	use warnings;
+snippet     pkg16
 	package `PerlPackageName()` {
+		use 5.016_000;
+		use warnings;
 		${0}
 	}
 	1;
@@ -45,16 +31,11 @@ snippet     pkg14
 snippet     strict
 	use strict;
 	use warnings;
-	use 5.010_000;
+	use 5.010_001;
 	${0}
 
-snippet     str12
-	use 5.012_001;
-	use warnings;
-	${0}
-
-snippet     str14
-	use 5.014_001;
+snippet     str16
+	use 5.016_000;
 	use warnings;
 	${0}
 
@@ -189,6 +170,11 @@ snippet     tservice
 		${0}
 	});
 
+snippet     test_service
+	test_service {
+		${0}
+	};
+
 #For Amon2
 snippet     any
 	any '${1}' => sub {
@@ -212,7 +198,7 @@ snippet     post
 	};
 
 snippet     many
-	any => [qw/${1}/] => '${2}' => sub {
+	any [qw/${1}/] => '${2}' => sub {
 		my $c = shift;
 		${0}
 		$c->render('${2}');

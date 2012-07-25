@@ -85,3 +85,22 @@ export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
 
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+#perlbrew
+[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+
+if [[ -s /usr/local/perlbrew/perlbrew/etc/bashrc ]];
+then
+    export PERLBREW_ROOT=/usr/local/perlbrew/perlbrew
+    export PERLBREW_HOME=/usr/local/perlbrew/home
+    source /usr/local/perlbrew/perlbrew/etc/bashrc
+fi
+
+#PERL5LIBに./libをねじ込む
+typeset -xT PERL5LIB perl5_lib
+typeset -U perl5_lib
+perl5_lib=(
+    ./lib
+    $perl5_lib
+)
+

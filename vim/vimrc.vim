@@ -50,6 +50,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'mattn/gist-vim'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
@@ -156,6 +157,10 @@ func! PerlPackageName()
   let str  = substitute(path , '.*lib/\(.\+\)\.pm','\1', "")
   return substitute(str, "/", "::", "g")
 endfunc
+
+" .psgi,.tはperl
+autocmd BufNewFile,BufRead *.psgi set filetype=perl
+autocmd BufNewFile,BufRead *.t set filetype=perl
 
 "zencoding.vim
 let g:user_zen_settings = {
@@ -326,3 +331,7 @@ nnoremap <Leader>gb :<C-u>Gblame<CR>
 nnoremap <leader>gp :<C-u>Git push
 nnoremap <leader>gP :<C-u>Git pull
 
+" -------------------------------------------------------------------------------------
+" quickrun
+" -------------------------------------------------------------------------------------
+nnoremap <Leader>q :<C-u>QuickRun -args<Space>
