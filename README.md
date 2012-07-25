@@ -1,6 +1,9 @@
 dotfiles
 ========
-makeすればリンクされるよ
+
+``` shell
+curl -kL https://raw.github.com/gist/8f7a4a3b875607efd780/setup.sh | sh
+```
 
 TODO
 * tmuxとかmodule-setupとかその辺の設定
