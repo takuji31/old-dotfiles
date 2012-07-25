@@ -104,3 +104,7 @@ perl5_lib=(
     $perl5_lib
 )
 
+if [ -e "$(which rbenv)" ]; then
+    eval "$(rbenv init -)"
+fi
+
