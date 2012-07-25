@@ -1,8 +1,8 @@
 dotfiles
 ========
 
-``` Shell
-curl -kL https://raw.github.com/gist/8f7a4a3b875607efd780/4400ef0e4879a9e0365ebc9bc773292d19bbbc07/setup.sh | sh
+``` shell
+curl -kL https://raw.github.com/gist/8f7a4a3b875607efd780/setup.sh | sh
 ```
 
 TODO
