@@ -20,7 +20,7 @@ alias su="su -l"
 alias s=screen
 #TODO tmuxのエイリアスもうちょい整理
 alias tn="tmux -2 new-session"
-alias ta="tmux attach-session"
+alias ta="tmuxx.sh"
 alias tv="tmux new-window vim "
 
 alias vi="vim"
