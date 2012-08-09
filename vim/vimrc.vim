@@ -133,6 +133,9 @@ noremap ; :
 map ,pt <Esc>:%! perltidy<CR>
 map ,ptv <Esc>:'<,'>! perltidy<CR>
 
+"JSONの整形
+map <Leader>j !python -m json.tool<CR>
+
 "%のカッコ移動を拡張
 source $VIMRUNTIME/macros/matchit.vim
 
