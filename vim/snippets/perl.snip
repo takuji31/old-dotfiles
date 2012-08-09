@@ -104,28 +104,16 @@ snippet     try
 
 #For WAF
 snippet     req
-	$self->req->${1}
+	$${1:c}->req->${2}
 
 snippet     rp
-	my $$1 = $self->req->param("${1}");${0}
+	my $$2 = $${1:c}->req->param("${2}");${0}
 
 snippet     rd
-	$self->redirect("${1}");${0}
+	$${1:c}->redirect("${2}");${0}
 
 snippet     st
-	$self->stash->{${1}} = ${2};${0}
-
-snippet     dis
-	sub dispatch_${1} {
-		my $self = shift;
-		${2}
-	}
-
-snippet     on
-	on ${1} => sub {
-		my $self = shift;
-		${2}
-	};
+	$${1:self}->stash->{${2}} = ${3};${0}
 
 snippet     ns
 	`PerlPackageName()`${0}
@@ -178,28 +166,28 @@ snippet     test_service
 #For Amon2
 snippet     any
 	any '${1}' => sub {
-		my $c = shift;
+		my ($c, $args) = @_;
 		${0}
 		$c->render('${2}');
 	};
 
 snippet     get
 	get '${1}' => sub {
-		my $c = shift;
+		my ($c, $args) = @_;
 		${0}
 		$c->render('${2}');
 	};
 
 snippet     post
 	post '${1}' => sub {
-		my $c = shift;
+		my ($c, $args) = @_;
 		${0}
 		$c->render('${2}');
 	};
 
 snippet     many
 	any [qw/${1}/] => '${2}' => sub {
-		my $c = shift;
+		my ($c, $args) = @_;
 		${0}
 		$c->render('${2}');
 	};
