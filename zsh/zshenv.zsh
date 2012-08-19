@@ -55,6 +55,7 @@ typeset -xT PYTHONPATH pyhon_path
 typeset -U python_path
 python_path=(
     ./lib
+    /usr/local/lib/python2.7/site-packages(N-/)
 )
 
 #Pager
