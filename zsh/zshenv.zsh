@@ -8,7 +8,7 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
 typeset -U path
 path=(
-$(brew --prefix coreutils)/libexec/gnubin(N-/)
+$(which brew && brew --prefix coreutils)/libexec/gnubin(N-/)
 $DOTFILES/git/bin(N-/)
 $HOME/project/bin(N-/)
 $HOME/perl5/bin(N-/)
