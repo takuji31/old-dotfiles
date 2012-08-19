@@ -8,16 +8,12 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
 typeset -U path
 path=(
-$HOME/android-sdk/tools(N-/)
-$HOME/android-sdk/platform-tools(N-/)
+$(brew --prefix coreutils)/libexec/gnubin(N-/)
 $DOTFILES/git/bin(N-/)
-$HOME/.nodebrew/current/bin(N-/)
 $HOME/project/bin(N-/)
 $HOME/perl5/bin(N-/)
 $HOME/local/bin(N-/)
 $HOME/bin(N-/)
-/android-sdk/tools(N-/)
-/android-sdk/platform-tools(N-/)
 /Applications/MacVim.app/Contents/MacOS(N-/)
 /usr/local/sbin(N-/)
 /opt/local/bin(N-/)
