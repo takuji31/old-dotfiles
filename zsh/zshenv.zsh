@@ -86,11 +86,9 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #perlbrew
 [[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
 
-if [[ -s /usr/local/perlbrew/perlbrew/etc/bashrc ]];
+if [[ -s /usr/local/perlbrew/bashrc ]];
 then
-    export PERLBREW_ROOT=/usr/local/perlbrew/perlbrew
-    export PERLBREW_HOME=/usr/local/perlbrew/home
-    source /usr/local/perlbrew/perlbrew/etc/bashrc
+    source /usr/local/perlbrew/bashrc
 fi
 
 #PERL5LIBに./libをねじ込む
