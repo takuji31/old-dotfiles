@@ -54,6 +54,8 @@ setopt transient_rprompt
 
 #拡張globを有効に
 setopt extended_glob
+# PCRE 互換の正規表現を使う
+setopt re_match_pcre
 #ファイル名の展開時にディレクトリなら/を付加する
 setopt mark_dirs
 #pushdで重複させない
@@ -99,12 +101,10 @@ zle -N self-insert url-quote-magic
 
 #バージョン管理システムの状態をうまいこと表示してくれる関数
 autoload -Uz vcs_info
-#どうせgitとsvnしか使わないからそれだけ有効に
-zstyle ':vcs_info:*' enable git svn
+#SVNのみ有効、gitは自前で何とかする
+zstyle ':vcs_info:*' enable svn
 #通常の表示
-zstyle ':vcs_info:*' formats '%F{red}[%r:%b] chg:[%c%u]%f'
-#アクション中(マージ、リベースなど)の表示
-zstyle ':vcs_info:*' actionformats '%F{yellow}%s[%b|%a]%f'
+zstyle ':vcs_info:*' formats '%F{red}%r:%b chg:%c%u%f'
 #vcs_infoの変数の数らしいけどいまいちよくわからないというか0しか使ってない
 zstyle ':vcs_info:*' max-exports 3
 #リビジョン取得する
