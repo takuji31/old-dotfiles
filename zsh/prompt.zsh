@@ -3,18 +3,19 @@
 PROMPT2="%F{green}%_%%%f "
 SPROMPT="%F{green}%r じゃね? [n,y,a,e]:%f "
 
+autoload -Uz VCS_INFO_get_data_git
+VCS_INFO_get_data_git 2> /dev/null
+
 function update_prompt() {
-    PROMPT="%F{green}%n@%m%#%f "
     LANG=ja_JP.utf8 vcs_info
-    if [[ -n "$vcs_info_msg_0_" ]];
+    VCS_MESSAGE="$vcs_info_msg_0_$(prompt_git_current_branch)$(git_not_pushed)"
+    if [[ -n "$VCS_MESSAGE" ]];
     then
-        VCS_MESSAGE=" $vcs_info_msg_0_$(git_not_pushed)"
-    else
-        VCS_MESSAGE=""
+        VCS_MESSAGE="%F{cyan}(%f$VCS_MESSAGE%F{cyan})%f"
     fi
-    RPROMPT="%F{cyan}[ %~%f$VCS_MESSAGE %F{cyan}]%f"
 
+    PROMPT="%F{cyan}%n@%m%f %F{blue}%~ %f$VCS_MESSAGE
+%F{green}%#%f "
 }
-
 
 precmd_functions+=update_prompt
