@@ -50,13 +50,13 @@ function prompt_git_current_branch() {
         st="%F{green}M%f"
     fi
     if [[ "$gst" =~ "(?m)^(?:A|D|R|C)" ]]; then
-        st="$di%F{green}S%f"
+        st="$st%F{green}S%f"
     fi
     if [[ "$gst" =~ "(?m)^[\s\w]M" ]]; then
-        st="$di%F{red}M%f"
+        st="$st%F{red}M%f"
     fi
     if [[ "$gst" =~ "(?m)^[\s\w](?:\?|A|D|R|C)" ]]; then
-        st="$di%F{red}S%f"
+        st="$st%F{red}S%f"
     fi
 
     if [[ -z "$st" ]]; then
