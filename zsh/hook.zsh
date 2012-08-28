@@ -17,8 +17,10 @@ function git_not_pushed() {
         echo " %F{yellow}[not pushed]%f"
     elif [[ $st =~ "(?m)^# Your branch is behind" ]];then
         echo " %F{yellow}[not pulled]%f"
-    else 
-        echo " %F{red}[has diverged]%f"
+    elif [[ $st =~ "have diverged" ]];then
+        echo " %F{red}[have diverged]%f"
+    else
+        echo " %F{yellow}[unknown]%f"
     fi
   fi
   return 0
