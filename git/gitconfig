@@ -9,6 +9,7 @@
   wt = whatchanged --stat
   new = whatchanged HEAD@{1}..HEAD --reverse --stat
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%cn] %Cgreen%d%Creset %s\" --all --date=short
+  logg = log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d'
   rmall = !sh -c 'git status | grep deleted: | awk '{print $3}'  | xargs git rm'
 
 [color]

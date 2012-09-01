@@ -12,13 +12,22 @@ function git_not_pushed() {
         return 0
       fi
     done
-    echo " %F{red}[not pushed]%f"
+    st=`git status 2>/dev/null`
+    if [[ $st =~ "(?m)^# Your branch is ahead of" ]];then
+        echo " %F{yellow}[not pushed]%f"
+    elif [[ $st =~ "(?m)^# Your branch is behind" ]];then
+        echo " %F{yellow}[not pulled]%f"
+    elif [[ $st =~ "have diverged" ]];then
+        echo " %F{red}[have diverged]%f"
+    else
+        echo " %F{yellow}[unknown]%f"
+    fi
   fi
   return 0
 }
 
 function prompt_git_current_branch() {
-    local name st color suffix gitdir action
+    local name gst st gitdir action
     if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
         return
     fi
@@ -36,17 +45,23 @@ function prompt_git_current_branch() {
         return
     fi
 
-    st=`git status 2> /dev/null`
-    if [[ "$st" =~ "(?m)^nothing to" ]]; then
-        color="%F{green}"
-    elif [[ "$st" =~ "(?m)^nothing added" ]]; then
-        color="%F{yellow}"
-    elif [[ "$st" =~ "(?m)^no changes added" ]]; then
-        color="%F{red}"
-    elif [[ "$st" =~ "(?m)^# Untracked" ]]; then
-        color="%B%F{red}"
-        suffix="%b"
+    gst=`git status -s 2> /dev/null`
+    if [[ "$gst" =~ "(?m)^M" ]]; then
+        st="%F{green}M%f"
+    fi
+    if [[ "$gst" =~ "(?m)^(?:A|D|R|C)" ]]; then
+        st="$st%F{green}S%f"
+    fi
+    if [[ "$gst" =~ "(?m)^[\s\w]M" ]]; then
+        st="$st%F{red}M%f"
+    fi
+    if [[ "$gst" =~ "(?m)^[\s\w](?:\?|A|D|R|C)" ]]; then
+        st="$st%F{red}S%f"
     fi
 
-    echo "%F{cyan}git:%f$color$name$action%f$suffix"
+    if [[ -z "$st" ]]; then
+        st="%F{green}no change%f"
+    fi
+
+    echo "%F{cyan}git:%f%F{yellow}$name%f$action ST:($st)"
 }
