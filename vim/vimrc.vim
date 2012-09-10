@@ -166,6 +166,9 @@ endfunc
 autocmd BufNewFile,BufRead *.psgi set filetype=perl
 autocmd BufNewFile,BufRead *.t set filetype=perl
 
+" NeoComplCacheのスニペットではハードタブを使用する
+autocmd FileType snippet setlocal noexpandtab
+
 "zencoding.vim
 let g:user_zen_settings = {
             \    'indentation' : '    ',
