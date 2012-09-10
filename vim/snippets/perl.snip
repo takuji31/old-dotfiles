@@ -16,6 +16,7 @@ snippet     pkg
 	package `PerlPackageName()`;
 	use strict;
 	use warnings;
+	use utf8;
 	use 5.010_001;
 	${0}
 	1;
@@ -37,6 +38,11 @@ snippet     str16
 	use 5.016_001;
 	use warnings;
 	${0}
+
+snippet     constant
+	use constant {
+		${1} => ${2},
+	};${0}
 
 snippet     lmy
 	my ($${1:class}, ${2}) = ${3:@_};${0}
@@ -75,16 +81,16 @@ snippet     vfsub
 		${5}
 	}
 snippet     dv
-		state $validator = Data::Validator->new(
-			${1}
-		)->with(qw/Method${2}/);
-		my ($${3:class}, $args) = $validator->validate(@_);
+	state $validator = Data::Validator->new(
+		${1}
+	)->with(qw/Method${2}/);
+	my ($${3:class}, $args) = $validator->validate(@_);
 
 snippet     fdv
-		state $validator = Data::Validator->new(
-			${1}
-		)${2:->with(qw/${3\}/)};
-		my ($${4:class}, $args) = $validator->validate(@_);
+	state $validator = Data::Validator->new(
+		${1}
+	)${2:->with(qw/${3\}/)};
+	my ($${4:class}, $args) = $validator->validate(@_);
 
 snippet     import
 	sub import {
