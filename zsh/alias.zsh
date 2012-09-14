@@ -29,3 +29,10 @@ alias sudo="sudo "
 alias zmv='noglob zmv -W'
 
 #TODO gitのalias書く
+alias gst="git status -sb && git --no-pager stash list"
+alias gch='git cherry -v'
+alias glgg='git logg'
+alias glg='git logg | head'
+function gcm() {
+    git commit -m $*
+}
