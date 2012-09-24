@@ -103,3 +103,4 @@ if [ -e "$(which rbenv)" ]; then
     eval "$(rbenv init -)"
 fi
 
+[[ -e $HOME/.zshenv_local ]] && source $HOME/.zshenv_local

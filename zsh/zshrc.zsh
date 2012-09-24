@@ -130,3 +130,4 @@ source $DOTFILES/zsh/prompt.zsh
 source $DOTFILES/zsh/alias.zsh
 source $DOTFILES/zsh/hook.zsh
 
+[[ -e $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
