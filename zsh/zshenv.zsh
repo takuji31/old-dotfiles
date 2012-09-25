@@ -84,8 +84,6 @@ export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 #perlbrew
-[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
-
 if [[ -s /usr/local/perlbrew/bashrc ]];
 then
     source /usr/local/perlbrew/bashrc
