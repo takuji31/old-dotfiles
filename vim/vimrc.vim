@@ -54,6 +54,7 @@ NeoBundle 'mattn/gist-vim'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
+NeoBundle 'sudo.vim'
 
 filetype plugin indent on
 syntax enable
