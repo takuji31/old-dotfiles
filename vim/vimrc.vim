@@ -258,7 +258,7 @@ imap <expr><TAB> pumvisible() ? "\<C-n>" : neocomplcache#sources#snippets_comple
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR> pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
