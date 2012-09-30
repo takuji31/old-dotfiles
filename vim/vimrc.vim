@@ -192,6 +192,7 @@ nnoremap <silent> [unite]o  :<C-u>Unite -buffer-name=files outline buffer_tab fi
 nnoremap <silent> [unite]p  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
 nnoremap <silent> [unite]s  :<C-u>Unite -buffer-name=source source<CR>
 nnoremap <silent> [unite]h  :<C-u>Unite -buffer-name=help help<CR>
+nnoremap <silent> [unite]b  :<C-u>Unite -buffer-name=help neobundle/install:!<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
