@@ -87,20 +87,6 @@ snippet     fdv
 		)${2:->with(qw/${3\}/)};
 		my ($${4:class}, $args) = $validator->validate(@_);
 
-snippet     sasub
-	sub ${1} {
-		args my $${2:class => 'ClassName'},
-			 my $${3:param} => '${4}';
-		${5}
-	}
-
-snippet     sapsub
-	sub ${1} {
-		$args_pos my $${2:class => 'ClassName'},
-				  my $${3:param} => '${4}';
-		${5}
-	}
-
 snippet     import
 	sub import {
 		my $class  = shift;
