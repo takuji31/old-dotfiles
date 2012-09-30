@@ -96,6 +96,7 @@ snippet     import
 
 
 snippet     try
+prev_word '^'
 	try {
 		${1}
 	} catch {
@@ -104,6 +105,7 @@ snippet     try
 
 #For WAF
 snippet     req
+prev_word '^'
 	$${1:c}->req->${2}
 
 snippet     rp
