@@ -41,6 +41,7 @@ setopt inc_append_history
 setopt share_history
 ## C-sでのヒストリ検索が潰されてしまうため、出力停止・開始用にC-s/C-qを使わない。
 setopt no_flow_control
+stty stop undef
 
 
 # プロンプト
@@ -130,3 +131,4 @@ source $DOTFILES/zsh/prompt.zsh
 source $DOTFILES/zsh/alias.zsh
 source $DOTFILES/zsh/hook.zsh
 
+[[ -e $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
