@@ -107,11 +107,12 @@ prev_word '^'
 	} catch {
 		${2}
 	};
+	${0}
 
 #For WAF
 snippet     req
 prev_word '^'
-	$${1:c}->req->${2}
+	$${1:c}->req->${0}
 
 snippet     rp
 	my $$2 = $${1:c}->req->param("${2}");${0}

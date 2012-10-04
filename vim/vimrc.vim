@@ -251,13 +251,13 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_jump)
-smap <C-k>     <Plug>(neocomplcache_snippets_jump)
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> pumvisible() ? "\<C-n>" : neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_jump)" : "\<TAB>"
+imap <expr><TAB> pumvisible() ? "\<C-n>" : neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
