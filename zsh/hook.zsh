@@ -1,5 +1,5 @@
 _show_dirname_on_screen_title() {
-  echo -ne "\ek$(basename $(pwd))\e\\"
+  echo -ne "\ek$(basename "$(pwd)")\e\\"
 }
 precmd_functions+=_show_dirname_on_screen_title
 
