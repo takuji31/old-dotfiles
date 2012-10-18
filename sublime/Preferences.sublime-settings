@@ -1,4 +1,10 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"font_size": 14.0
+	"color_scheme": "Wombat ST2.tmTheme",
+	"theme": "Soda Dark.sublime-theme",
+	"font_face": "Source Code Pro",
+	"font_size": 14.0,
+	"ignored_packages": [],
+	"rulers": [80,100],
+	"vintage_start_in_command_mode": true,
+	"vintage_ctrl_keys": true
 }
