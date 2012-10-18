@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"CoffeeScript",
+		"emmet-sublime",
 		"Git",
 		"jQuery Snippets pack",
 		"Package Control",
@@ -10,5 +11,9 @@
 		"SublimeLinter",
 		"Theme - Soda",
 		"ZenCoding"
+	],
+	"repositories":
+	[
+		"https://github.com/sergeche/emmet-sublime"
 	]
 }
