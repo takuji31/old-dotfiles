@@ -1,12 +1,15 @@
 {
-	"auto_upgrade_last_run": 1350551310,
+	"auto_upgrade_last_run": 1350578423,
 	"installed_packages":
 	[
+		"AutoFileName",
 		"CoffeeScript",
 		"emmet-sublime",
 		"Git",
 		"jQuery Snippets pack",
+		"MakeExecutable",
 		"Package Control",
+		"SFTP",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"Theme - Soda",
