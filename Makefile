@@ -5,7 +5,8 @@ setup:  $(HOME)/.zshenv\
         $(HOME)/.vim\
 		$(HOME)/.tmux.conf\
         $(HOME)/.gitconfig\
-        $(HOME)/.gitignore
+        $(HOME)/.gitignore\
+        $(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 
 
 $(HOME)/.zshenv:
@@ -32,3 +33,5 @@ $(HOME)/.gitconfig:
 $(HOME)/.gitignore:
 	ln -sf `pwd`/git/gitignore $(HOME)/.gitignore
 
+$(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User:
+	ln -sf `pwd`/sublime $(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User

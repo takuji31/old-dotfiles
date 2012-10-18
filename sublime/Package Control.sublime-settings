@@ -1,0 +1,13 @@
+{
+	"auto_upgrade_last_run": 1350542956,
+	"installed_packages":
+	[
+		"CoffeeScript",
+		"Git",
+		"jQuery Snippets pack",
+		"Package Control",
+		"SublimeCodeIntel",
+		"Theme - Soda",
+		"ZenCoding"
+	]
+}
