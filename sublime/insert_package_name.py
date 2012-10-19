@@ -4,7 +4,7 @@ import textwrap
 
 class PerlInsertPackageEventListener(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
-        if self.get_syntax(view) != "Perl":
+        if self.get_syntax(view) != "Perl Extended":
             return []
         package = self.get_package_name(view)
         pkg_string = textwrap.dedent("""
