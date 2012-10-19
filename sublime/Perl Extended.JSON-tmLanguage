@@ -178,5 +178,290 @@
         },
         { "include": "source.perl" }
     ],
+    "repository": {
+        "escaped_char": {
+            "match": "\\\\.", 
+            "name": "constant.character.escape.perl"
+        }, 
+        "line_comment": {
+            "patterns": [
+                {
+                    "captures": {
+                        "1": {
+                            "name": "comment.line.number-sign.perl"
+                        }, 
+                        "2": {
+                            "name": "punctuation.definition.comment.perl"
+                        }
+                    }, 
+                    "match": "^((#).*$\\n?)", 
+                    "name": "meta.comment.full-line.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.perl"
+                        }
+                    }, 
+                    "match": "(#).*$\\n?", 
+                    "name": "comment.line.number-sign.perl"
+                }
+            ]
+        }, 
+        "nested_braces": {
+            "begin": "\\{", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": "\\}", 
+            "patterns": [
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "#nested_braces"
+                }
+            ]
+        }, 
+        "nested_braces_interpolated": {
+            "begin": "\\{", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": "\\}", 
+            "patterns": [
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "#variable"
+                }, 
+                {
+                    "include": "#nested_braces_interpolated"
+                }
+            ]
+        }, 
+        "nested_brackets": {
+            "begin": "\\[", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": "\\]", 
+            "patterns": [
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "#nested_brackets"
+                }
+            ]
+        }, 
+        "nested_brackets_interpolated": {
+            "begin": "\\[", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": "\\]", 
+            "patterns": [
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "#variable"
+                }, 
+                {
+                    "include": "#nested_brackets_interpolated"
+                }
+            ]
+        }, 
+        "nested_ltgt": {
+            "begin": "<", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": ">", 
+            "patterns": [
+                {
+                    "include": "#nested_ltgt"
+                }
+            ]
+        }, 
+        "nested_ltgt_interpolated": {
+            "begin": "<", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": ">", 
+            "patterns": [
+                {
+                    "include": "#variable"
+                }, 
+                {
+                    "include": "#nested_ltgt_interpolated"
+                }
+            ]
+        }, 
+        "nested_parens": {
+            "begin": "\\(", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": "\\)", 
+            "patterns": [
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "#nested_parens"
+                }
+            ]
+        }, 
+        "nested_parens_interpolated": {
+            "begin": "\\(", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.section.scope.perl"
+                }
+            }, 
+            "end": "\\)", 
+            "patterns": [
+                {
+                    "comment": "This is to prevent thinks like qr/foo$/ to treat $/ as a variable", 
+                    "match": "\\$(?=[^\\s\\w\\'\\{\\[\\(\\<])", 
+                    "name": "keyword.control.anchor.perl"
+                }, 
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "#variable"
+                }, 
+                {
+                    "include": "#nested_parens_interpolated"
+                }
+            ]
+        }, 
+        "variable": {
+            "patterns": [
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)&(?![A-Za-z0-9_])", 
+                    "name": "variable.other.regexp.match.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)`(?![A-Za-z0-9_])", 
+                    "name": "variable.other.regexp.pre-match.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)'(?![A-Za-z0-9_])", 
+                    "name": "variable.other.regexp.post-match.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)\\+(?![A-Za-z0-9_])", 
+                    "name": "variable.other.regexp.last-paren-match.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)\"(?![A-Za-z0-9_])", 
+                    "name": "variable.other.readwrite.list-separator.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)0(?![A-Za-z0-9_])", 
+                    "name": "variable.other.predefined.program-name.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)[_ab\\*\\.\\/\\|,\\\\;#%=\\-~^:?!\\$<>\\(\\)\\[\\]@](?![A-Za-z0-9_])", 
+                    "name": "variable.other.predefined.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$)[0-9]+(?![A-Za-z0-9_])", 
+                    "name": "variable.other.subpattern.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "([\\$\\@\\%](#)?)([a-zA-Zx7f-xff\\$]|::)([a-zA-Z0-9_x7f-xff\\$]|::)*\\b", 
+                    "name": "variable.other.readwrite.global.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }, 
+                        "2": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "(\\$\\{)(?:[a-zA-Zx7f-xff\\$]|::)(?:[a-zA-Z0-9_x7f-xff\\$]|::)*(\\})", 
+                    "name": "variable.other.readwrite.global.perl"
+                }, 
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.variable.perl"
+                        }
+                    }, 
+                    "match": "([\\$\\@\\%](#)?)[0-9_]\\b", 
+                    "name": "variable.other.readwrite.global.special.perl"
+                }
+            ]
+        }
+    }, 
+
     "uuid": "4876db41-622a-42d0-85fa-ea8be6fbe533"
 }
