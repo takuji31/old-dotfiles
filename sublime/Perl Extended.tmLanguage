@@ -32,6 +32,30 @@
 			<string>keyword.control.perl.extended</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.pragma.perl.extended</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;=use)\s+\b(lib|strict|warnings|feature|utf8|mro|constant|diagnostics|auto(use|die)|parent|overload|version|open|[\d\._"]+)\b</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.deprecated.pragma.perl.extended</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;=use)\s+\b(base|encoding)\b</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>\b(say)\b</string>
 			<key>name</key>
