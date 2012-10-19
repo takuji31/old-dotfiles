@@ -9,7 +9,6 @@
     ],
     "firstLineMatch": "^#!.*\\bperl\\b", 
     "patterns": [
-        { "include": "source.perl" },
         {
             "match": "\\bstate\\b", 
             "name": "storage.modifier.perl.extended"
@@ -37,7 +36,147 @@
         {
             "match": "\\b(@|%|\\$)[a-zA-Z0-9_]\\b",
             "name": "variable.other.perl.extended"
-        }
+        },
+                {
+            "begin": "\\b(?=s([^\\s\\w\\[({<]).*\\1([egimosr]*)([\\}\\)\\;\\,]|\\s+))", 
+            "comment": "string.regexp.replaceXXX", 
+            "end": "((([egimosr]*)))(?=([\\}\\)\\;\\,]|\\s+|$))", 
+            "endCaptures": {
+                "1": {
+                    "name": "string.regexp.replace.perl"
+                }, 
+                "2": {
+                    "name": "punctuation.definition.string.perl"
+                }, 
+                "3": {
+                    "name": "keyword.control.regexp-option.perl"
+                }
+            }, 
+            "patterns": [
+                {
+                    "begin": "(s\\s*)([^\\s\\w\\[({<])", 
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.perl"
+                        }, 
+                        "1": {
+                            "name": "support.function.perl"
+                        }
+                    }, 
+                    "end": "(?=\\2)", 
+                    "name": "string.regexp.replaceXXX.simple_delimiter.perl", 
+                    "patterns": [
+                        {
+                            "include": "#escaped_char"
+                        }
+                    ]
+                }, 
+                {
+                    "begin": "'", 
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.perl"
+                        }
+                    }, 
+                    "end": "'", 
+                    "name": "string.regexp.replaceXXX.format.single_quote.perl", 
+                    "patterns": [
+                        {
+                            "match": "\\\\['\\\\]", 
+                            "name": "constant.character.escape.perl.perl"
+                        }
+                    ]
+                }, 
+                {
+                    "begin": "([^\\s\\w\\[({<])", 
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.perl"
+                        }
+                    }, 
+                    "end": "\\1", 
+                    "name": "string.regexp.replaceXXX.format.simple_delimiter.perl", 
+                    "patterns": [
+                        {
+                            "include": "#escaped_char"
+                        }, 
+                        {
+                            "include": "#variable"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "begin": "\\b(?=(?<!\\\\)s\\s*([^\\s\\w\\[({<]))", 
+            "comment": "string.regexp.replace.extended", 
+            "end": "\\2((([egimosr]*x[egimosr]*)))\\b", 
+            "endCaptures": {
+                "1": {
+                    "name": "string.regexp.replace.perl"
+                }, 
+                "2": {
+                    "name": "punctuation.definition.string.perl"
+                }, 
+                "3": {
+                    "name": "keyword.control.regexp-option.perl"
+                }
+            }, 
+            "patterns": [
+                {
+                    "begin": "(s)\\s*(.)", 
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.perl"
+                        }, 
+                        "1": {
+                            "name": "support.function.perl"
+                        }
+                    }, 
+                    "end": "(?=\\2)", 
+                    "name": "string.regexp.replace.extended.simple_delimiter.perl", 
+                    "patterns": [
+                        {
+                            "include": "#escaped_char"
+                        }
+                    ]
+                }, 
+                {
+                    "begin": "'", 
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.perl"
+                        }
+                    }, 
+                    "end": "'(?=[egimosr]*x[egimosr]*)\\b", 
+                    "name": "string.regexp.replace.extended.simple_delimiter.perl", 
+                    "patterns": [
+                        {
+                            "include": "#escaped_char"
+                        }
+                    ]
+                }, 
+                {
+                    "begin": "(.)", 
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.string.perl"
+                        }
+                    }, 
+                    "end": "\\1(?=[egimosr]*x[egimosr]*)\\b", 
+                    "name": "string.regexp.replace.extended.simple_delimiter.perl", 
+                    "patterns": [
+                        {
+                            "include": "#escaped_char"
+                        }, 
+                        {
+                            "include": "#variable"
+                        }
+                    ]
+                }
+            ]
+        },
+        { "include": "source.perl" }
     ],
     "uuid": "4876db41-622a-42d0-85fa-ea8be6fbe533"
 }
