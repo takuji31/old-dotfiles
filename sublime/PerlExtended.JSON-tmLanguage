@@ -1,0 +1,23 @@
+{
+    "name": "Perl Extended",
+    "scopeName": "source.perl.extended",
+    "fileTypes": [
+        "pl",
+        "pm",
+        "t",
+        "psgi"
+    ],
+    "firstLineMatch": "^#!.*\\bperl\\b", 
+    "patterns": [
+        { "include": "source.perl" },
+        {
+            "match": "\\bstate\\b", 
+            "name": "storage.modifier.perl"
+        },
+        {
+            "match": "(?<!->)\\b(try|catch)\\b", 
+            "name": "keyword.control.module_dsl.perl"
+        }
+    ],
+    "uuid": "4876db41-622a-42d0-85fa-ea8be6fbe533"
+}

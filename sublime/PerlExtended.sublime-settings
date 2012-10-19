@@ -1,0 +1,11 @@
+{
+	"extensions":
+	[
+        "pl", 
+        "pm", 
+        "pod", 
+        "t", 
+        "PL",
+        "psgi"
+	]
+}
