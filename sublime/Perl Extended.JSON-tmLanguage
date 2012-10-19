@@ -19,7 +19,7 @@
             "name": "keyword.control.perl.extended"
         },
         {
-            "match": "(?<=use)\\s+\\b(lib|strict|warnings|feature|utf8|mro|constant|diagnostics|auto(use|die)|parent|overload|version|open|[\\d\\._\"]+)\\b",
+            "match": "(?<=use|no)\\s+\\b(lib|strict|warnings|feature|utf8|mro|constant|diagnostics|auto(use|die)|parent|overload|version|open|[\\d\\._\"]+)\\b",
             "captures": {
                 "1": { "name": "keyword.control.pragma.perl.extended" }
             }

@@ -41,7 +41,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?&lt;=use)\s+\b(lib|strict|warnings|feature|utf8|mro|constant|diagnostics|auto(use|die)|parent|overload|version|open|[\d\._"]+)\b</string>
+			<string>(?&lt;=use|no)\s+\b(lib|strict|warnings|feature|utf8|mro|constant|diagnostics|auto(use|die)|parent|overload|version|open|[\d\._"]+)\b</string>
 		</dict>
 		<dict>
 			<key>captures</key>
