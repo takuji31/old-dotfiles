@@ -17,5 +17,10 @@
 	"trim_automatioc_white_space": true,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": false,
-	"word_wrap": false
+	"word_wrap": false,
+	"codeintel_syntax_map": {
+        "Python Django": "Python",
+        "Perl Extended": "Perl"
+    }
+
 }

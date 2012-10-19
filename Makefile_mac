@@ -6,7 +6,8 @@ setup:  $(HOME)/.zshenv\
 		$(HOME)/.tmux.conf\
         $(HOME)/.gitconfig\
         $(HOME)/.gitignore\
-        $(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
+        $(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User\
+        $(HOME)/.codeintel/config
 
 
 $(HOME)/.zshenv:
@@ -35,3 +36,7 @@ $(HOME)/.gitignore:
 
 $(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User:
 	ln -sf `pwd`/sublime $(HOME)/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
+
+$(HOME)/.codeintel/config:
+	mkdir -p $(HOME)/.codeintel/
+	ln -sf `pwd`/sublime/codeintel.config $(HOME)/.codeintel/config
