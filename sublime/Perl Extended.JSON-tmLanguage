@@ -12,11 +12,19 @@
         { "include": "source.perl" },
         {
             "match": "\\bstate\\b", 
-            "name": "storage.modifier.perl"
+            "name": "storage.modifier.perl.extended"
         },
         {
             "match": "(?<!->)\\b(try|catch)\\b", 
-            "name": "keyword.control.module_dsl.perl"
+            "name": "keyword.control.perl.extended"
+        },
+        {
+            "match": "\\b(say)\\b", 
+            "name": "support.function.perl.extended"
+        },
+        {
+            "match": "\\b(@|%|\\$)[a-zA-Z0-9_]\\b",
+            "name": "variable.other.perl.extended"
         }
     ],
     "uuid": "4876db41-622a-42d0-85fa-ea8be6fbe533"

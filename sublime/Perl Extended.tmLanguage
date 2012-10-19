@@ -23,13 +23,25 @@
 			<key>match</key>
 			<string>\bstate\b</string>
 			<key>name</key>
-			<string>storage.modifier.perl</string>
+			<string>storage.modifier.perl.extended</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>(?&lt;!-&gt;)\b(try|catch)\b</string>
 			<key>name</key>
-			<string>keyword.control.module_dsl.perl</string>
+			<string>keyword.control.perl.extended</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(say)\b</string>
+			<key>name</key>
+			<string>support.function.perl.extended</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(@|%|\$)[a-zA-Z0-9_]\b</string>
+			<key>name</key>
+			<string>variable.other.perl.extended</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
