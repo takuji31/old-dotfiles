@@ -1,7 +1,8 @@
 {
-	"auto_upgrade_last_run": 1350578423,
+	"auto_upgrade_last_run": 1350617019,
 	"installed_packages":
 	[
+		"AAAPackageDev",
 		"AutoFileName",
 		"CoffeeScript",
 		"emmet-sublime",
