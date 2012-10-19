@@ -7,6 +7,10 @@ linux*|darwin*)
     ;;
 esac
 
+if [[ -e "/Applications/Sublime Text 2.app/" ]]; then
+    alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+fi
+
 alias la="ls -la"
 alias lf="ls -F"
 alias ll="ls -l"
