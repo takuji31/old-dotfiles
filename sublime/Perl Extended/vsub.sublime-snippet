@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+sub ${1} {
+    state \$validator = Data::Validator->new(
+        ${2}
+    )->with(qw/Method${3}/);
+    my (\$${4:class}, \$args) = \$validator->validate(@_);
+    ${0}
+}
+]]></content>
+    <tabTrigger>vsub</tabTrigger>
+    <scope>source.perl.extended</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+any '${1}' => sub {
+    my (\$c, \$args) = @_;
+    
+    ${0}
+    
+    \$c->render('${2}');
+};
+]]></content>
+    <tabTrigger>any</tabTrigger>
+    <scope>source.perl.extended</scope>
+</snippet>

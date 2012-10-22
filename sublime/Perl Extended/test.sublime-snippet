@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[
+use strict;
+use warnings;
+use utf8;
+use Test::More;
+${1:use Test::Exception;
+use t::Util;}
+${2:
+test_service{
+    my (\$c, ) = @_;
+    ${0}
+\};
+}
+done_testing;
+]]></content>
+    <tabTrigger>test</tabTrigger>
+    <scope>source.perl.extended</scope>
+</snippet>
