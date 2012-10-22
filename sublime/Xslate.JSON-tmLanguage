@@ -1,0 +1,10 @@
+{
+    "name": "Xslate",
+    "scopeName": "source.html.xslate",
+    "fileTypes": ["tx"],
+    "patterns": [
+        { "include": "source.perl.extended" },
+        { "include": "text.html.basic" }
+    ],
+    "uuid": "03664769-8cab-4298-ab25-6968378f341b"
+}
