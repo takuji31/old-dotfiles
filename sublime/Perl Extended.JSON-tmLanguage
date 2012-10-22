@@ -41,6 +41,10 @@
             "name": "variable.other.perl.extended"
         },
         {
+            "match": "\\b\\d+\\b",
+            "name": "variable.parameter.digit.perl.extended"
+        },
+        {
             "include": "#line_comment"
         }, 
         {
