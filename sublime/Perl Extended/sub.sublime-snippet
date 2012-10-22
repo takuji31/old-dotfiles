@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+sub ${1}{
+    my (\$${2:class}, ${3}) = @_;
+    ${0}
+}
+]]></content>
+    <tabTrigger>sub</tabTrigger>
+    <scope>source.perl.extended</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+any[qw/${1}/] => '${2}' => sub {
+    my (\$c, \$args) = @_;
+    
+    ${0}
+    
+    \$c->render('${3}');
+};
+]]></content>
+    <tabTrigger>many</tabTrigger>
+    <scope>source.perl.extended</scope>
+</snippet>
