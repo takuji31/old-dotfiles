@@ -1,4 +1,9 @@
 {
+	"codeintel_syntax_map":
+	{
+		"Perl Extended": "Perl",
+		"Python Django": "Python"
+	},
 	"color_scheme": "Packages/User/Wombat ST2.tmTheme",
 	"fade_fold_buttons": false,
 	"font_face": "Source Code Pro",
@@ -6,7 +11,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Perl"
+		"Perl",
+		"Vintage",
+		"emmet-sublime"
 	],
 	"rulers":
 	[
