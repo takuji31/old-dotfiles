@@ -1,6 +1,6 @@
 {
     "name": "Xslate",
-    "scopeName": "source.html.xslate",
+    "scopeName": "text.html.xslate",
     "fileTypes": ["tx"],
     "patterns": [
         { "include": "source.perl.extended" },
