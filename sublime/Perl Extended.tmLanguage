@@ -23,6 +23,12 @@
 	<array>
 		<dict>
 			<key>match</key>
+			<string>(//|\|\||)</string>
+			<key>name</key>
+			<string>keyword.operand.logic.perl.extended</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\bstate\b</string>
 			<key>name</key>
 			<string>storage.modifier.perl.extended</string>
