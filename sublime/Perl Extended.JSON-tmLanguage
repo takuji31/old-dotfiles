@@ -13,6 +13,10 @@
     "keyEquivalent": "^~P", 
     "patterns": [
         {
+            "name": "keyword.operand.logic.perl.extended",
+            "match": "(//|\\|\\||)"
+        },
+        {
             "match": "\\bstate\\b", 
             "name": "storage.modifier.perl.extended"
         },

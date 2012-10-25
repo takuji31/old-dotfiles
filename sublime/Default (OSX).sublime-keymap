@@ -1,3 +1,6 @@
 [
-    { "keys": ["super+space"], "command": "code_intel_auto_complete" }
+    { "keys": ["super+space"], "command": "code_intel_auto_complete" },
+    { "keys": ["ctrl+t"], "command": "build", "args": {"variant": "Test"} },
+    { "keys": ["U"], "command": "redo", "context": [{"key": "setting.command_mode"}] },
+    { "keys": ["ctrl+r"], "command": "show_panel", "args": {"panel": "replace"}, "context": [{"key": "setting.command_mode"}] }
 ]

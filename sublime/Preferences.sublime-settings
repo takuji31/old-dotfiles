@@ -12,7 +12,6 @@
 	"ignored_packages":
 	[
 		"Perl",
-		"Vintage",
 		"emmet-sublime"
 	],
 	"rulers":
@@ -24,7 +23,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_automatioc_white_space": true,
 	"vintage_ctrl_keys": true,
-	"vintage_start_in_command_mode": false,
+	"vintage_start_in_command_mode": true,
 	"word_wrap": false,
 	"codeintel_syntax_map": {
         "Python Django": "Python",

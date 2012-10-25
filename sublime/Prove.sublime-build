@@ -1,6 +1,0 @@
-{
-    "selector": "source.perl.extended",
-    "cmd": ["zsh -c 'prove'"],
-    "shell": true,
-    "working_dir": "$project_path"
-}

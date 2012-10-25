@@ -1,0 +1,16 @@
+{
+    "selector": "source.perl.extended",
+    "cmd": ["zsh -c 'prove'"],
+    "working_dir": "$project_path",
+    "shell": true,
+    "variants": [
+        {
+            "name": "Run",
+            "cmd": ["zsh -c 'perl $file'"]
+        },
+        {
+            "name": "Test",
+            "cmd": ["zsh -c 'prove --norc $file'"]
+        }
+    ]
+}
