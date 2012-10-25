@@ -9,6 +9,10 @@
             "cmd": ["zsh -c 'perl $file'"]
         },
         {
+            "name": "Lint",
+            "cmd": ["zsh -c 'perl -c $file'"]
+        },
+        {
             "name": "Test",
             "cmd": ["zsh -c 'prove --norc $file'"]
         }
