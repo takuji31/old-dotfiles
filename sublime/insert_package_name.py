@@ -7,17 +7,23 @@ class PerlInsertPackageEventListener(sublime_plugin.EventListener):
         if self.get_syntax(view) != "Perl Extended":
             return []
         package = self.get_package_name(view)
-        pkg_string = textwrap.dedent("""
-            package %(package)s;
-            use 5.016_001;
-            use warnings;
-        """ % locals())
-        pkg10_string = textwrap.dedent("""
-            package %(package)s;
-            use 5.010_001;
-            use strict;
-            use warnings;
-        """ % locals())
+        pkg_string = textwrap.dedent("""package %(package)s;
+use 5.016_001;
+use warnings;
+
+${0}
+
+1;
+""" % locals())
+        pkg10_string = textwrap.dedent("""package %(package)s;
+use 5.010_001;
+use strict;
+use warnings;
+
+${0}
+
+1;
+""" % locals())
         return [("pkg", pkg_string), ("pkg10", pkg10_string)]
     def get_syntax(self, view):
         syntax_file = view.settings().get('syntax')
