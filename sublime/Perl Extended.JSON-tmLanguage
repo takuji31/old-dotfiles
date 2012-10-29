@@ -13,6 +13,10 @@
     "keyEquivalent": "^~P", 
     "patterns": [
         {
+            "name": "invalid.illegal.elsif.perl.extended",
+            "match": "(else\\s?if)"
+        },
+        {
             "name": "keyword.operand.logic.perl.extended",
             "match": "(//|\\|\\||)"
         },

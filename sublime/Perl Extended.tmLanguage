@@ -23,6 +23,12 @@
 	<array>
 		<dict>
 			<key>match</key>
+			<string>(else\s?if)</string>
+			<key>name</key>
+			<string>invalid.illegal.elsif.perl.extended</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(//|\|\||)</string>
 			<key>name</key>
 			<string>keyword.operand.logic.perl.extended</string>
