@@ -16,7 +16,7 @@ if has('vim_starting')
 endif
 
 "NeoBundleに必要なものたち
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neobundle.vim', 'master'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/unite.vim'
 
