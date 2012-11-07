@@ -51,6 +51,7 @@ NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'mattn/gist-vim'
+NeoBundle 'kmnk/vim-unite-giti'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
