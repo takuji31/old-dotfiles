@@ -55,8 +55,6 @@ setopt transient_rprompt
 
 #拡張globを有効に
 setopt extended_glob
-# PCRE 互換の正規表現を使う
-setopt re_match_pcre
 #ファイル名の展開時にディレクトリなら/を付加する
 setopt mark_dirs
 #pushdで重複させない
