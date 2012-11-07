@@ -30,3 +30,5 @@
 	user = takuji31
 [branch]
 	autosetuprebase = always
+[push]
+	default = simple
