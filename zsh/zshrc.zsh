@@ -83,9 +83,6 @@ setopt list_types
 #色を簡単に指定するための関数
 autoload -U colors
 colors
-#補完を有効に
-autoload -Uz compinit
-compinit
 #zmv(mvコマンドの拡張版？)をロードする
 autoload -Uz zmv
 
@@ -114,6 +111,14 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr 'S'
 zstyle ':vcs_info:*' unstagedstr '*'
 
+
+#補完を有効に
+fpath=(
+    $HOME/project/dotfiles/zsh/hub-zsh-completion
+    $fpath
+)
+autoload -Uz compinit
+compinit
 
 #履歴
 export HISTFILE=$HOME/.zsh_history

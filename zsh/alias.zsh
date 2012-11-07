@@ -40,3 +40,5 @@ alias glg='git logg | head'
 function gcm() {
     git commit -m $*
 }
+
+eval "$(hub alias -s)"
