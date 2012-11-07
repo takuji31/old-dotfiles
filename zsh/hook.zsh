@@ -13,11 +13,11 @@ function git_not_pushed() {
       fi
     done
     st=`git status 2>/dev/null`
-    if [[ -n `echo "$st" | grep "^# Your branch is ahead of"` ]];then
+    if [[ $st =~ "(?m)^# Your branch is ahead of" ]];then
         echo " %F{yellow}[not pushed]%f"
-    elif [[ -n `echo "$st" | grep "^# Your branch is behind"` ]];then
+    elif [[ $st =~ "(?m)^# Your branch is behind" ]];then
         echo " %F{yellow}[not pulled]%f"
-    elif [[ -n `echo "$st" | grep "have diverged"` ]];then
+    elif [[ $st =~ "have diverged" ]];then
         echo " %F{red}[have diverged]%f"
     else
         echo " %F{yellow}[unknown]%f"
@@ -28,7 +28,7 @@ function git_not_pushed() {
 
 function prompt_git_current_branch() {
     local name gst st gitdir action
-    if [[ -n `echo "$PWD" | grep '/\.git(/.*)?$'` ]]; then
+    if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
         return
     fi
 
@@ -46,16 +46,16 @@ function prompt_git_current_branch() {
     fi
 
     gst=`git status -s 2> /dev/null`
-    if [[ -n `echo "$gst" | grep "^M"` ]]; then
+    if [[ "$gst" =~ "(?m)^M" ]]; then
         st="%F{green}M%f"
     fi
-    if [[ -n `echo "$gst" | grep "^(?:A|D|R|C)"` ]]; then
+    if [[ "$gst" =~ "(?m)^(?:A|D|R|C)" ]]; then
         st="$st%F{green}S%f"
     fi
-    if [[ -n `echo "$gst" | grep "^[\s\w]M"` ]]; then
+    if [[ "$gst" =~ "(?m)^[\s\w]M" ]]; then
         st="$st%F{red}M%f"
     fi
-    if [[ -n `echo "$gst" | grep "^[\s\w](?:\?|A|D|R|C)"` ]]; then
+    if [[ "$gst" =~ "(?m)^[\s\w](?:\?|A|D|R|C)" ]]; then
         st="$st%F{red}S%f"
     fi
 
