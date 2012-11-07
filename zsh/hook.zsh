@@ -3,16 +3,17 @@ _show_dirname_on_screen_title() {
 }
 precmd_functions+=_show_dirname_on_screen_title
 
+GIT_BIN=`which git`
 function git_not_pushed() {
-  if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
-    head="$(git rev-parse HEAD 2>/dev/null)"
-    for x in $(git rev-parse --remotes)
+  if [ "$($GIT_BIN rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+    head="$($GIT_BIN rev-parse HEAD 2>/dev/null)"
+    for x in $($GIT_BIN rev-parse --remotes)
     do
       if [ "$head" = "$x" ]; then
         return 0
       fi
     done
-    st=`git status 2>/dev/null`
+    st=`$GIT_BIN status 2>/dev/null`
     if [[ -n `echo "$st" | grep "^# Your branch is ahead of"` ]];then
         echo " %F{yellow}[not pushed]%f"
     elif [[ -n `echo "$st" | grep "^# Your branch is behind"` ]];then
@@ -32,12 +33,12 @@ function prompt_git_current_branch() {
         return
     fi
 
-    name=`git rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
+    name=`$GIT_BIN rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
     if [[ -z $name ]]; then
         return
     fi
 
-    gitdir=`git rev-parse --git-dir 2> /dev/null`
+    gitdir=`$GIT_BIN rev-parse --git-dir 2> /dev/null`
     action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
 
     if [[ -e "$gitdir/prompt-nostatus" ]]; then
@@ -45,7 +46,7 @@ function prompt_git_current_branch() {
         return
     fi
 
-    gst=`git status -s 2> /dev/null`
+    gst=`$GIT_BIN status -s 2> /dev/null`
     if [[ -n `echo "$gst" | grep "^M"` ]]; then
         st="%F{green}M%f"
     fi

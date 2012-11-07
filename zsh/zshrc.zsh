@@ -125,8 +125,8 @@ export SAVEHIST=1000000
 export CLICOLOR=true
 
 #外部ファイルの読み込み
+source $DOTFILES/zsh/hook.zsh
 source $DOTFILES/zsh/prompt.zsh
 source $DOTFILES/zsh/alias.zsh
-source $DOTFILES/zsh/hook.zsh
 
 [[ -e $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
