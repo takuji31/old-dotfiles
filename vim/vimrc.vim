@@ -17,7 +17,11 @@ endif
 
 "NeoBundleに必要なものたち
 NeoBundle 'Shougo/neobundle.vim', 'master'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {'build' : {
+                    \'mac' : 'make -f make_mac.mak',
+                    \'unix' : 'make -f make_unix.mak',
+                \},
+            \}
 NeoBundle 'Shougo/unite.vim'
 
 
