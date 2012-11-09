@@ -21,6 +21,7 @@ $HOME/bin(N-/)
 $path
 )
 
+export GIT_BIN=`which git`
 #EDITORの設定、自分で入れたvimがあればそれを使う
 if test -e /usr/local/bin/vim
 then

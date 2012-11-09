@@ -3,7 +3,6 @@ _show_dirname_on_screen_title() {
 }
 precmd_functions+=_show_dirname_on_screen_title
 
-GIT_BIN=`which git`
 function git_not_pushed() {
   if [ "$($GIT_BIN rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
     head="$($GIT_BIN rev-parse HEAD 2>/dev/null)"
