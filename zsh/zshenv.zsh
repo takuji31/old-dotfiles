@@ -84,20 +84,6 @@ export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-#perlbrew
-if [[ -s /usr/local/perlbrew/bashrc ]];
-then
-    source /usr/local/perlbrew/bashrc
-fi
-
-#PERL5LIBに./libをねじ込む
-typeset -xT PERL5LIB perl5_lib
-typeset -U perl5_lib
-perl5_lib=(
-    ./lib
-    $perl5_lib
-)
-
 if [ -e "$(which rbenv)" ]; then
     eval "$(rbenv init -)"
 fi
