@@ -30,3 +30,5 @@
 	user = takuji31
 [push]
 	default = simple
+[merge]
+	ff = false
