@@ -25,10 +25,8 @@
     name = Nishibayashi Takuji
     email = takuji31@gmail.com
 [diff "cartonlock"]
-	textconv = "perl -MJSON -0e \"\\$m = decode_json(<>)->{modules}; print qq(\\$_~\\$m->{\\$_}->{version}\\n) for sort keys %\\$m\""
+    textconv = "perl -MJSON -0e \"\\$m = decode_json(<>)->{modules}; print qq(\\$_~\\$m->{\\$_}->{version}\\n) for sort keys %\\$m\""
 [github]
-	user = takuji31
-[branch]
-	autosetuprebase = always
+    user = takuji31
 [push]
-	default = simple
+    default = simple
