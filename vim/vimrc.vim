@@ -56,6 +56,7 @@ NeoBundle 'basyura/TweetVim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'tokuhirom/unite-git'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
@@ -201,6 +202,7 @@ nnoremap <silent> [unite]p  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
 nnoremap <silent> [unite]s  :<C-u>Unite -buffer-name=source source<CR>
 nnoremap <silent> [unite]h  :<C-u>Unite -buffer-name=help help<CR>
 nnoremap <silent> [unite]b  :<C-u>Unite -buffer-name=help neobundle/install:!<CR>
+nnoremap <silent> [unite]g  :<C-u>Unite -buffer-name=git-ls git<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
