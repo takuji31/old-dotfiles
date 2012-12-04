@@ -143,6 +143,9 @@ map ,ptv <Esc>:'<,'>! perltidy<CR>
 "JSONの整形
 map <Leader>j !python -m json.tool<CR>
 
+"オムニ補完の発動をC-Spaceに
+imap <Nul> <C-x><C-o>
+
 "%のカッコ移動を拡張
 source $VIMRUNTIME/macros/matchit.vim
 
