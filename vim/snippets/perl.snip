@@ -50,13 +50,13 @@ prev_word '^'
 	};${0}
 
 snippet     lmy
-prev_word '^'
 	my ($${1:class}, ${2}) = ${3:@_};${0}
 
 snippet     smy
-prev_word '^'
-	my $${1:self} = shift;
-	${0}
+	my $${1:self} = shift;${0}
+
+snippet     hmy
+	my $$2 = $${1:self}->{${2}};${0}
 
 snippet     sub
 	sub ${1} {
@@ -232,7 +232,7 @@ prev_word   '^'
 		dist_abstract => '${1}',
 		license     => 'perl',
 		module_name => '${2}',
-		configure_requires => {'Module::Build' => '0.4003'},
+		configure_requires => {'Module::Build' => '0.038'},
 		requires => {
 			${3}
 		},
