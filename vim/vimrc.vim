@@ -58,6 +58,7 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'tokuhirom/unite-git'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'tomasr/molokai'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
