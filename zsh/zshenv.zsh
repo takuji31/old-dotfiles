@@ -88,4 +88,6 @@ if [ -e "$(which rbenv)" ]; then
     eval "$(rbenv init -)"
 fi
 
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
+
 [[ -e $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
