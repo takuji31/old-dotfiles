@@ -118,7 +118,27 @@ prev_word '^'
 		${1}
 	} catch {
 		${2}
+	};${0}
+
+snippet     eval
+prev_word '^'
+	eval {
+		${1}
 	};
+	${0}
+
+snippet     catch
+prev_word '^'
+	my $e;
+	if ($e = ${1:Some::Exception}->caught) {
+		${2}
+	} elsif ($e = Exception::Class->caught) {
+		ref $e ? $e->rethrow : die $e;
+	}${0}
+
+snippet     cif
+prev_word '^'
+	} elsif ($e = ${1:Some::Exception}->caught) {
 	${0}
 
 #For WAF
@@ -159,8 +179,8 @@ prev_word '^'
 	use strict;
 	use warnings;
 	use utf8;
-	use Test::More;
 	use t::Util;
+	use Test::More;
 	${0}
 	done_testing;
 
@@ -169,10 +189,15 @@ prev_word '^'
 	use strict;
 	use warnings;
 	use utf8;
+	use t::Util;
 	use Test::More;
 	use Test::Exception;
-	use t::Util;
-	${0}
+
+	test_service {
+		my ($c, ) = @_;
+		${0}
+	};
+
 	done_testing;
 
 snippet     subtest
