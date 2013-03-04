@@ -116,30 +116,13 @@ snippet     try
 prev_word '^'
 	try {
 		${1}
-	} catch {
-		${2}
-	};${0}
-
-snippet     eval
-prev_word '^'
-	eval {
-		${1}
-	};
-	${0}
+	}${0}
 
 snippet     catch
 prev_word '^'
-	my $e;
-	if ($e = ${1:Some::Exception}->caught) {
+	'${1:Some::Exception}' => sub {
 		${2}
-	} elsif ($e = Exception::Class->caught) {
-		ref $e ? $e->rethrow : die $e;
-	}${0}
-
-snippet     cif
-prev_word '^'
-	} elsif ($e = ${1:Some::Exception}->caught) {
-	${0}
+	}${3:,}
 
 #For WAF
 snippet     req
