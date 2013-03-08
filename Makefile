@@ -6,6 +6,7 @@ setup:  $(HOME)/.zshenv\
 		$(HOME)/.tmux.conf\
         $(HOME)/.gitconfig\
         $(HOME)/.gitignore\
+        $(HOME)/.dim\
 
 
 $(HOME)/.zshenv:
@@ -31,3 +32,6 @@ $(HOME)/.gitconfig:
 
 $(HOME)/.gitignore:
 	ln -sf `pwd`/git/gitignore $(HOME)/.gitignore
+
+$(HOME)/.dim:
+	ln -sf `pwd`/dim $(HOME)/.dim

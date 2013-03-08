@@ -56,6 +56,9 @@ NeoBundle 'basyura/TweetVim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'tokuhirom/unite-git'
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'tomasr/molokai'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
@@ -70,7 +73,7 @@ set ambiwidth=double
 "256色有効
 set t_Co=256
 "色の設定
-colorscheme wombat256patched
+colorscheme smyck
 "backspaceで消せる文字の設定
 set backspace=eol,indent,start
 "C言語タイプのインデントをオン
@@ -142,6 +145,9 @@ map ,ptv <Esc>:'<,'>! perltidy<CR>
 "JSONの整形
 map <Leader>j !python -m json.tool<CR>
 
+"オムニ補完の発動をC-Spaceに
+imap <Nul> <C-x><C-o>
+
 "%のカッコ移動を拡張
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -201,10 +207,11 @@ nnoremap <silent> [unite]p  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
 nnoremap <silent> [unite]s  :<C-u>Unite -buffer-name=source source<CR>
 nnoremap <silent> [unite]h  :<C-u>Unite -buffer-name=help help<CR>
 nnoremap <silent> [unite]b  :<C-u>Unite -buffer-name=help neobundle/install:!<CR>
+nnoremap <silent> [unite]g  :<C-u>Unite -buffer-name=git-ls git<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
-let g:unite_source_file_mru_ignore_pattern = '\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|^\%(\\\\\|/mnt/\|/media/\|/Volumes/\)\|\%(^\|/\)blib\%($\|/\)'
+let g:unite_source_file_mru_ignore_pattern = '\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|^\%(\\\\\|/mnt/\|/media/\|/Volumes/\)\|\%(^\|/\)\%(b\|ext\)lib\%($\|/\)'
 
 
 let g:unite_source_file_mru_limit = 200
@@ -289,7 +296,7 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "ダイナミック補完要らないんだけど無効にする方法見つからなかったからとりあえずごまかす
 let g:dbext_default_profile_mysql = "type=MYSQL:user=root:dbname=mysql"

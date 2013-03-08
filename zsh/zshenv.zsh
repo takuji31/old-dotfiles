@@ -84,8 +84,7 @@ export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-if [ -e "$(which rbenv)" ]; then
-    eval "$(rbenv init -)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 
 [[ -e $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
