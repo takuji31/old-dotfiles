@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: pkg
+# key: pkg
+# --
+package ${1:`(yas/perl-package-name)`};
+use 5.016_002;
+use strict;
+use warnings;
+use utf8;
+$0
+1;

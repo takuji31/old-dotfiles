@@ -1,0 +1,15 @@
+;;文字コードの設定
+(set-language-environment "Japanese")
+(prefer-coding-system 'utf-8)
+(when (eq system-type 'darwin)
+  (require 'ucs-normalize)
+  (set-file-name-coding-system 'utf-8-hfs)
+  (setq locale-coding-system 'utf-8-hfs))
+
+;;バックアップファイル、オートセーブファイルを作らない
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;;yes/noをy/nに
+(fset 'yes-or-no-p 'y-or-n-p)
+ 

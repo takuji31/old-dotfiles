@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: psc
+# key: psc
+# --
+#!/usr/bin/env perl
+use 5.016_003;
+use strict;
+use warnings;
+use utf8;
+$0

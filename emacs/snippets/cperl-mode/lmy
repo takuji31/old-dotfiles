@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: lmy
+# key: lmy
+# --
+my (\$${1:class}, $2) = ${3:@_};$0

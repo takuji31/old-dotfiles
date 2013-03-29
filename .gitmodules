@@ -4,3 +4,9 @@
 [submodule "zsh/hub-zsh-completion"]
 	path = zsh/hub-zsh-completion
 	url = https://github.com/glidenote/hub-zsh-completion.git
+[submodule "emacs/public_repos/emacs-powerline"]
+	path = emacs/public_repos/emacs-powerline
+	url = https://github.com/jonathanchu/emacs-powerline.git
+[submodule "emacs/public_repos/direx"]
+	path = emacs/public_repos/direx
+	url = https://github.com/m2ym/direx-el.git

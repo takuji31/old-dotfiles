@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: sb
+# key: sb
+# --
+sub $1 {
+    my (\$${2:class}, $3) = @_;
+    $0
+}

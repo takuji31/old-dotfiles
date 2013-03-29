@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: tfull
+# key: tfull
+# --
+use strict;
+use warnings;
+use utf8;
+use t::Util;
+use Test::More;
+use Test::Exception;
+
+test_service {
+    my ($c, ) = @_;
+    $0
+};
+
+done_testing;
+

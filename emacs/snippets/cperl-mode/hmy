@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: hmy
+# key: hmy
+# --
+my \$$2 = \$${1:self}->{$2};$0

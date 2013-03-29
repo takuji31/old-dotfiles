@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: t
+# key: t
+# --
+use strict;
+use warnings;
+use utf8;
+use Test::More;
+
+$0
+
+done_testing;
+

@@ -7,6 +7,7 @@ setup:  $(HOME)/.zshenv\
         $(HOME)/.gitconfig\
         $(HOME)/.gitignore\
         $(HOME)/.dim\
+        $(HOME)/.emacs.d\
 
 
 $(HOME)/.zshenv:
@@ -35,3 +36,6 @@ $(HOME)/.gitignore:
 
 $(HOME)/.dim:
 	ln -sf `pwd`/dim $(HOME)/.dim
+
+$(HOME)/.emacs.d:
+	ln -sf `pwd`/emacs $(HOME)/.emacs.d

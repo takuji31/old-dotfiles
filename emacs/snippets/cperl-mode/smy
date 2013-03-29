@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: smy
+# key: smy
+# --
+my \$${1:self} = shift;$0
