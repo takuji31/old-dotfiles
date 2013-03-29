@@ -76,7 +76,7 @@ if [ "$PAGER" = "lv" ]; then
 fi
 
 #Email
-export EMAIL=takuji@senchan.jp
+export EMAIL=takuji31@gmail.com
 
 #MySQLのプロンプト
 export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
