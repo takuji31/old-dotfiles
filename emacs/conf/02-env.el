@@ -12,4 +12,7 @@
 
 ;;yes/noをy/nに
 (fset 'yes-or-no-p 'y-or-n-p)
- 
+
+;;GUIで起動した時にシェルのPATHを読むようにする
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
