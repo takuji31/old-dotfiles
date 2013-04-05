@@ -49,5 +49,6 @@
 (load-theme 'wombat t)
 
 ;;popwin.el
-(setq display-buffer-function 'popwin:display-buffer)
+(popwin-mode 1)
+;;(add-to-list display-buffer-alist 'popwin:display-buffer)
 (push '("^\\*helm" :regexp t) popwin:special-display-config)
