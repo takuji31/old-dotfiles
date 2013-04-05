@@ -13,8 +13,6 @@
 (ac-config-default)
 
 (require 'recentf-ext)
-(require 'term-paste-mode)
-(defalias 'p 'term-paste-mode)
 
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/\\(conf\\|junk\\)/")
