@@ -1,9 +1,9 @@
-(require 'package nil t)
+(require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
-(require 'auto-install nil t)
+(require 'auto-install)
 (setq auto-install-directory "~/.emacs.d/elisp")
 ;;(auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
