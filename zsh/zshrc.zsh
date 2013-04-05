@@ -1,5 +1,5 @@
 #### オプション ####
-
+[[ $TERM = "eterm-color" ]] && TERM=xterm-256color
 ## 基本 ##
 #Emacsモード
 bindkey -e
