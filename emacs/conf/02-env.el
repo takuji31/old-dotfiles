@@ -16,3 +16,5 @@
 ;;GUIで起動した時にシェルのPATHを読むようにする
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+(global-undo-tree-mode t)

@@ -21,8 +21,8 @@
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
 (require 'point-undo)
-(require 'redo+)
 (require 'quickrun)
+(require 'undo-tree)
 (require 'popwin)
 (require 'direx)
 (require 'direx-project)

@@ -8,7 +8,7 @@
 (global-set-key (kbd "C-c C-f") 'helm-git-project)
 (global-set-key (kbd "<f7>") 'point-undo)
 (global-set-key (kbd "<f8>") 'point-redo)
-(global-set-key (kbd "M-/") 'redo)
+(global-set-key (kbd "M-/") 'undo-tree-redo)
 (global-set-key (kbd "C-c e") 'helm-flymake)
 (global-set-key (kbd "C-x b") 'my-helm)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
