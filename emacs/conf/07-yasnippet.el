@@ -1,4 +1,3 @@
-(require 'yasnippet)
 (yas-global-mode t)
 (defun yas/perl-package-name ()
   (let ((file-path (file-name-sans-extension (buffer-file-name))))

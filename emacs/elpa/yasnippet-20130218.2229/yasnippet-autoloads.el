@@ -3,9 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet" "yasnippet.el"
-;;;;;;  (20790 54711))
-;;; Generated autoloads from yasnippet.el
+;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet" "../../../../../.emacs.d/elpa/yasnippet-20130218.2229/yasnippet.el"
+;;;;;;  "4b7053e77de30a36c858142fe32cf145")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/yasnippet-20130218.2229/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet" "\
 Toggle YASnippet mode.
@@ -46,8 +46,10 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("dropdown-list.el" "yasnippet-pkg.el")
-;;;;;;  (20790 54713 643965))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/yasnippet-20130218.2229/dropdown-list.el"
+;;;;;;  "../../../../../.emacs.d/elpa/yasnippet-20130218.2229/yasnippet-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/yasnippet-20130218.2229/yasnippet.el")
+;;;;;;  (20830 39476 672881 0))
 
 ;;;***
 

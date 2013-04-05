@@ -24,6 +24,7 @@
 (require 'popwin)
 (require 'direx)
 (require 'direx-project)
+(require 'yasnippet)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
