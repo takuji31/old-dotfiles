@@ -1,3 +1,5 @@
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
 (ffap-bindings)
 ;; sequential-command
 (sequential-command-setup-keys)
