@@ -11,6 +11,7 @@
 (global-set-key (kbd "C-.") 'undo-tree-redo)
 (global-set-key (kbd "C-c e") 'helm-flymake)
 (global-set-key (kbd "C-x b") 'my-helm)
+(global-set-key (kbd "C-x C-b") 'my-helm)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 ;;行儀のよくないマイナーモードのために2つ設定しておく
 (global-set-key (kbd "C-c C-g") 'magit-status)
