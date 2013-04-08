@@ -1,3 +1,6 @@
+(ffap-bindings)
+;; sequential-command
+(sequential-command-setup-keys)
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c C-c") 'other-window)
@@ -16,6 +19,3 @@
 ;;行儀のよくないマイナーモードのために2つ設定しておく
 (global-set-key (kbd "C-c C-g") 'magit-status)
 (global-set-key (kbd "C-c g") 'magit-status)
-;; sequential-command
-(sequential-command-setup-keys)
-(ffap-bindings)
