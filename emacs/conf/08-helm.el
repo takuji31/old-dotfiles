@@ -1,4 +1,3 @@
-(require 'helm-config)
 (helm-mode t)
 (setq helm-ff-transformer-show-only-basename nil)
 (add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
