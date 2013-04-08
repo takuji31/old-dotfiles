@@ -25,3 +25,9 @@
 ;;バッファーの名前をuniqueに
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (setq uniquify-ignore-buffers-re "*[^*]+*")
+
+;; ミニバッファの履歴を保存する
+(savehist-mode 1)
+
+;; ミニバッファの履歴の保存数を増やす
+(setq history-length 3000)
