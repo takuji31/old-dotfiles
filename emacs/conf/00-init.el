@@ -27,6 +27,6 @@
 (require 'yasnippet)
 (require 'gist)
 (require 'helm-config)
-(require 'helm-gist)
+
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
