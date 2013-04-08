@@ -18,3 +18,6 @@
   (exec-path-from-shell-initialize))
 
 (global-undo-tree-mode t)
+
+;;ハードタブ使わない
+(setq-default indent-tabs-mode nil)
