@@ -28,6 +28,7 @@
 (require 'gist)
 (require 'helm-config)
 (require 'helm-descbinds)
+(require 'helm-ag)
 (require 'sequential-command-config)
 (require 'uniquify)
 (require 'foreign-regexp)
