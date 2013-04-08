@@ -1,6 +1,7 @@
 (helm-mode t)
 (setq helm-ff-transformer-show-only-basename nil)
 (add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
+(add-to-list 'helm-completing-read-handlers-alist '(find-file-at-point . nil))
 
 (defun helm-c-sources-git-project-for (pwd)
   (loop for elt in

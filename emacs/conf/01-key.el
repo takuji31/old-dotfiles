@@ -18,3 +18,4 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 ;; sequential-command
 (sequential-command-setup-keys)
+(ffap-bindings)
