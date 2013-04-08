@@ -21,3 +21,5 @@
 ;;行儀のよくないマイナーモードのために2つ設定しておく
 (global-set-key (kbd "C-c C-g") 'magit-status)
 (global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
