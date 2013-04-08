@@ -27,6 +27,7 @@
 (require 'yasnippet)
 (require 'gist)
 (require 'helm-config)
+(require 'helm-descbinds)
 (require 'sequential-command-config)
 (require 'uniquify)
 (require 'foreign-regexp)
