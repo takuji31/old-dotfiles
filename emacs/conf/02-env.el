@@ -21,3 +21,7 @@
 
 ;;ハードタブ使わない
 (setq-default indent-tabs-mode nil)
+
+;;バッファーの名前をuniqueに
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")

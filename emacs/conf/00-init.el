@@ -28,6 +28,7 @@
 (require 'gist)
 (require 'helm-config)
 (require 'sequential-command-config)
+(require 'uniquify)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
