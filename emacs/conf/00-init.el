@@ -32,6 +32,7 @@
 (require 'sequential-command-config)
 (require 'uniquify)
 (require 'foreign-regexp)
+(require 'tabbar)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
