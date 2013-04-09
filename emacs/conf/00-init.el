@@ -25,6 +25,14 @@
 (require 'direx)
 (require 'direx-project)
 (require 'yasnippet)
+(require 'gist)
+(require 'helm-config)
+(require 'helm-descbinds)
+(require 'helm-ag)
+(require 'sequential-command-config)
+(require 'uniquify)
+(require 'foreign-regexp)
+(require 'tabbar)
 (require 'zencoding-mode)
 
 ;;Markdown

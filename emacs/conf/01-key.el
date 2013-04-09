@@ -1,3 +1,8 @@
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+(ffap-bindings)
+;; sequential-command
+(sequential-command-setup-keys)
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c C-c") 'other-window)
@@ -8,10 +13,15 @@
 (global-set-key (kbd "C-c C-f") 'helm-git-project)
 (global-set-key (kbd "<f7>") 'point-undo)
 (global-set-key (kbd "<f8>") 'point-redo)
-(global-set-key (kbd "M-/") 'undo-tree-redo)
+(global-set-key (kbd "C-.") 'undo-tree-redo)
 (global-set-key (kbd "C-c e") 'helm-flymake)
 (global-set-key (kbd "C-x b") 'my-helm)
+(global-set-key (kbd "C-x C-b") 'my-helm)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 ;;行儀のよくないマイナーモードのために2つ設定しておく
 (global-set-key (kbd "C-c C-g") 'magit-status)
 (global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;; Chrome ライクなタブ切り替えのキーバインド
+(global-set-key (kbd "<M-s-right>") 'tabbar-forward-tab)
+(global-set-key (kbd "<M-s-left>") 'tabbar-backward-tab)
