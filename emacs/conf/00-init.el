@@ -25,6 +25,7 @@
 (require 'direx)
 (require 'direx-project)
 (require 'yasnippet)
+(require 'zencoding-mode)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
