@@ -52,7 +52,6 @@
 (popwin-mode 1)
 ;;(add-to-list display-buffer-alist 'popwin:display-buffer)
 (push '("^\\*helm" :regexp t) popwin:special-display-config)
-(push '("^\\*magit" :regexp t) popwin:special-display-config)
 
 ;;tabbar.el
 (tabbar-mode 1)
