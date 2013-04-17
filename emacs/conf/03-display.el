@@ -108,6 +108,7 @@ are always included."
 
 ;; Linux向けのフォント設定
 (if window-system (progn
+                    (tool-bar-mode -1)
                     ;;powerline
                     (require 'powerline)
                     ;; モードラインの色
