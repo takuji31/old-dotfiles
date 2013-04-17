@@ -36,10 +36,11 @@
 (require 'foreign-regexp)
 (require 'tabbar)
 (require 'info)
-(require 'skk-setup)
 (require 'plenv)
 (require 'set-perl5lib)
 (require 'magit)
+(require 'skk-autoloads)
+(require 'skk-setup)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
