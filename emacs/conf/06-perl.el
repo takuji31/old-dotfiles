@@ -1,6 +1,5 @@
 ;;CPerl
 (defalias 'perl-mode 'cperl-mode)
-(require 'plenv)
 
 (setq cperl-indent-level 4
       cperl-continued-statement-offset 4
@@ -23,7 +22,6 @@
   (interactive)
   (save-excursion (mark-defun)
                   (perltidy-region))) 
-(require 'set-perl5lib)
 ;;perl-completion
 (defun perl-completion-hook ()
   (require 'perl-completion)
@@ -33,8 +31,6 @@
   (local-set-key (kbd "C-c t") 'perltidy-region)
   (local-set-key (kbd "C-c i") 'perltidy-defun)
   (local-set-key (kbd "C-c C-f") 'helm-git-project)
-  (require 'auto-complete nil t)
-  (auto-complete-mode t)
   (make-variable-buffer-local 'ac-sources)
   (setq ac-sources '(ac-source-perl-completion)))
 (add-hook 'cperl-mode-hook 'perl-completion-hook)
