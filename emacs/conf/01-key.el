@@ -25,3 +25,8 @@
 ;; Chrome ライクなタブ切り替えのキーバインド
 (global-set-key (kbd "<M-s-right>") 'tabbar-forward-tab)
 (global-set-key (kbd "<M-s-left>") 'tabbar-backward-tab)
+
+;; DDSKK
+(global-set-key (kbd "C-x C-j") 'skk-mode)
+
+(global-set-key (kbd "C-x j") 'direx-project:jump-to-project-root-other-window)

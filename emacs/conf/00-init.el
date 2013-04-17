@@ -33,6 +33,8 @@
 (require 'uniquify)
 (require 'foreign-regexp)
 (require 'tabbar)
+(require 'skk-autoloads)
+(require 'info)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
