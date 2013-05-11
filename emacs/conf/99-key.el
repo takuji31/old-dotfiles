@@ -28,3 +28,9 @@
 (global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
 
 (global-set-key (kbd "C-t") 'other-window)
+
+;; DDSKK
+(global-set-key (kbd "C-x C-j") 'skk-mode)
+
+(global-set-key (kbd "C-c C-j") 'direx-project:jump-to-project-root-other-window)
+(global-set-key (kbd "C-c j") 'dired-jump)
