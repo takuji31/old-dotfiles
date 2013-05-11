@@ -25,3 +25,6 @@
 ;; Chrome ライクなタブ切り替えのキーバインド
 (global-set-key (kbd "<M-s-right>") 'tabbar-forward-tab)
 (global-set-key (kbd "<M-s-left>") 'tabbar-backward-tab)
+(global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
+
+(global-set-key (kbd "C-t") 'other-window)
