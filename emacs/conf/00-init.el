@@ -42,6 +42,7 @@
 (require 'skk-autoloads)
 (require 'skk-setup)
 (require 'zencoding-mode)
+(require 'dash-at-point)
 
 ;;Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
