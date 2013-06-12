@@ -21,6 +21,10 @@
 ;;タイトルにファイルのフルパスを表示
 (setq frame-title-format "%f")
 
+;; 行番号の表示がクソ遅い問題を修正
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))
 ;;行番号を表示
 (global-linum-mode t)
 (setq linum-format "%4d ")
@@ -160,7 +164,7 @@ are always included."
                                (eq window-system 'ns))
                       ;; フォントセットを作る
                       (let* ((fontset-name "myfonts") ; フォントセットの名前
-                             (size 16) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
+                             (size 12) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
                              (asciifont "Source Code Pro") ; ASCIIフォント
                              (jpfont "Ricty") ; 日本語フォント
                              (font (format "%s-%d:weight=normal:slant=normal" asciifont size))
