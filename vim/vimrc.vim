@@ -9,14 +9,14 @@ set nocompatible
 filetype off
 filetype plugin indent off
 
-let g:neobundle_default_git_protocol="https"
+"let g:neobundle_default_git_protocol="https"
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+call neobundle#rc(expand('~/.vim/bundle/'))
 "NeoBundleに必要なものたち
-NeoBundle 'Shougo/neobundle.vim', 'master'
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {'build' : {
                     \'mac' : 'make -f make_mac.mak',
                     \'unix' : 'make -f make_unix.mak',
@@ -66,6 +66,10 @@ NeoBundle 'sudo.vim'
 
 filetype plugin indent on
 syntax enable
+
+NeoBundleCheck
+
+set shell=bash
 
 "UTF-8の文脈依存の文字幅を全角に(という認識)
 set ambiwidth=double
