@@ -3,65 +3,121 @@ _show_dirname_on_screen_title() {
 }
 precmd_functions+=_show_dirname_on_screen_title
 
-function git_not_pushed() {
-  if [ "$($GIT_BIN rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
-    head="$($GIT_BIN rev-parse HEAD 2>/dev/null)"
-    for x in $($GIT_BIN rev-parse --remotes)
-    do
-      if [ "$head" = "$x" ]; then
+# hooks 設定
+if is-at-least 4.3.11; then
+    # git のときはフック関数を設定する
+
+    # formats '(%s)-[%b]' '%c%u %m' , actionformats '(%s)-[%b]' '%c%u %m' '<!%a>'
+    # のメッセージを設定する直前のフック関数
+    # 今回の設定の場合はformat の時は2つ, actionformats の時は3つメッセージがあるので
+    # 各関数が最大3回呼び出される。
+    zstyle ':vcs_info:git+set-message:*' hooks \
+                                            git-hook-begin \
+                                            git-untracked \
+                                            git-push-status \
+                                            git-nomerge-branch \
+                                            git-stash-count
+
+    # フックの最初の関数
+    # git の作業コピーのあるディレクトリのみフック関数を呼び出すようにする
+    # (.git ディレクトリ内にいるときは呼び出さない)
+    # .git ディレクトリ内では git status --porcelain などがエラーになるため
+    function +vi-git-hook-begin() {
+        if [[ $(command git rev-parse --is-inside-work-tree 2> /dev/null) != 'true' ]]; then
+            # 0以外を返すとそれ以降のフック関数は呼び出されない
+            return 1
+        fi
+
         return 0
-      fi
-    done
-    st=`$GIT_BIN status 2>/dev/null`
-    if [[ $st =~ "(?m)^# Your branch is ahead of" ]];then
-        echo " %F{yellow}[not pushed]%f"
-    elif [[ $st =~ "(?m)^# Your branch is behind" ]];then
-        echo " %F{yellow}[not pulled]%f"
-    elif [[ $st =~ "have diverged" ]];then
-        echo " %F{red}[have diverged]%f"
-    else
-        echo " %F{yellow}[unknown]%f"
-    fi
-  fi
-  return 0
-}
+    }
 
-function prompt_git_current_branch() {
-    local name gst st gitdir action
-    if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-        return
-    fi
+    # untracked ファイル表示
+    #
+    # untracked ファイル(バージョン管理されていないファイル)がある場合は
+    # unstaged (%u) に ? を表示
+    function +vi-git-untracked() {
+        # zstyle formats, actionformats の2番目のメッセージのみ対象にする
+        if [[ "$1" != "1" ]]; then
+            return 0
+        fi
 
-    name=`$GIT_BIN rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
-    if [[ -z $name ]]; then
-        return
-    fi
+        if command git status --porcelain 2> /dev/null \
+            | awk '{print $1}' \
+            | command grep -F '??' > /dev/null 2>&1 ; then
 
-    gitdir=`$GIT_BIN rev-parse --git-dir 2> /dev/null`
-    action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
+            # unstaged (%u) に追加
+            hook_com[unstaged]+='?'
+        fi
+    }
 
-    if [[ -e "$gitdir/prompt-nostatus" ]]; then
-        echo "%F{cyan}git:%f$name$action"
-        return
-    fi
+    # push していないコミットの件数表示
+    #
+    # リモートリポジトリに push していないコミットの件数を
+    # pN という形式で misc (%m) に表示する
+    function +vi-git-push-status() {
+        # zstyle formats, actionformats の2番目のメッセージのみ対象にする
+        if [[ "$1" != "1" ]]; then
+            return 0
+        fi
 
-    gst=`$GIT_BIN status -s 2> /dev/null`
-    if [[ "$gst" =~ "(?m)^M" ]]; then
-        st="%F{green}M%f"
-    fi
-    if [[ "$gst" =~ "(?m)^(?:A|D|R|C)" ]]; then
-        st="$st%F{green}S%f"
-    fi
-    if [[ "$gst" =~ "(?m)^[\s\w]M" ]]; then
-        st="$st%F{red}M%f"
-    fi
-    if [[ "$gst" =~ "(?m)^[\s\w](?:\?|A|D|R|C)" ]]; then
-        st="$st%F{red}S%f"
-    fi
+        if [[ "${hook_com[branch]}" != "master" ]]; then
+            # master ブランチでない場合は何もしない
+            return 0
+        fi
 
-    if [[ -z "$st" ]]; then
-        st="%F{green}no change%f"
-    fi
+        # push していないコミット数を取得する
+        local ahead
+        ahead=$(command git rev-list origin/master..master 2>/dev/null \
+            | wc -l \
+            | tr -d ' ')
 
-    echo "%F{cyan}git:%f%F{yellow}$name%f$action ST:($st)"
-}
+        if [[ "$ahead" -gt 0 ]]; then
+            # misc (%m) に追加
+            hook_com[misc]+="(p${ahead})"
+        fi
+    }
+
+    # マージしていない件数表示
+    #
+    # master 以外のブランチにいる場合に、
+    # 現在のブランチ上でまだ master にマージしていないコミットの件数を
+    # (mN) という形式で misc (%m) に表示
+    function +vi-git-nomerge-branch() {
+        # zstyle formats, actionformats の2番目のメッセージのみ対象にする
+        if [[ "$1" != "1" ]]; then
+            return 0
+        fi
+
+        if [[ "${hook_com[branch]}" == "master" ]]; then
+            # master ブランチの場合は何もしない
+            return 0
+        fi
+
+        local nomerged
+        nomerged=$(command git rev-list master..${hook_com[branch]} 2>/dev/null | wc -l | tr -d ' ')
+
+        if [[ "$nomerged" -gt 0 ]] ; then
+            # misc (%m) に追加
+            hook_com[misc]+="(m${nomerged})"
+        fi
+    }
+
+
+    # stash 件数表示
+    #
+    # stash している場合は :SN という形式で misc (%m) に表示
+    function +vi-git-stash-count() {
+        # zstyle formats, actionformats の2番目のメッセージのみ対象にする
+        if [[ "$1" != "1" ]]; then
+            return 0
+        fi
+
+        local stash
+        stash=$(command git stash list 2>/dev/null | wc -l | tr -d ' ')
+        if [[ "${stash}" -gt 0 ]]; then
+            # misc (%m) に追加
+            hook_com[misc]+=":S${stash}"
+        fi
+    }
+
+fi

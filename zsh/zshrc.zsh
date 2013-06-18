@@ -55,8 +55,6 @@ setopt transient_rprompt
 
 #拡張globを有効に
 setopt extended_glob
-# PCRE 互換の正規表現を使う
-setopt re_match_pcre
 #ファイル名の展開時にディレクトリなら/を付加する
 setopt mark_dirs
 #pushdで重複させない
@@ -96,22 +94,37 @@ zstyle ':completion:*:default' menu select=1
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-
+#バージョン判定に使えるやつ
+autoload -Uz is-at-least
+autoload -Uz add-zsh-hook
 #バージョン管理システムの状態をうまいこと表示してくれる関数
 autoload -Uz vcs_info
-#SVNのみ有効、gitは自前で何とかする
-zstyle ':vcs_info:*' enable svn
-#通常の表示
-zstyle ':vcs_info:*' formats '%F{red}%r:%b chg:%c%u%f'
-#vcs_infoの変数の数らしいけどいまいちよくわからないというか0しか使ってない
+
+## 以下の3つのメッセージをエクスポートする
+#   $vcs_info_msg_0_ : 通常メッセージ用 (緑)
+#   $vcs_info_msg_1_ : 警告メッセージ用 (黄色)
+#   $vcs_info_msg_2_ : エラーメッセージ用 (赤)
 zstyle ':vcs_info:*' max-exports 3
-#リビジョン取得する
-zstyle ':vcs_info:*' get-revision true
-#変更をチェックする
-zstyle ':vcs_info:*' check-for-changes true
+#git svn hgを有効に
+zstyle ':vcs_info:*' enable git svn hg
+# 標準のフォーマット(git 以外で使用)
+# misc(%m) は通常は空文字列に置き換えられる
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b]' '%m' '<!%a>'
+zstyle ':vcs_info:svn:*' branchformat '%b:r%r'
 #addしてる/してない変更がある時に表示する文字列
 zstyle ':vcs_info:*' stagedstr 'S'
-zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:*' unstagedstr '?'
+
+if is-at-least 4.3.10; then
+    # git 用のフォーマット
+    # git のときはステージしているかどうかを表示
+    zstyle ':vcs_info:git:*' formats '(%s)-[%b]' '%c%u %m'
+    zstyle ':vcs_info:git:*' actionformats '(%s)-[%b]' '%c%u %m' '<!%a>'
+    zstyle ':vcs_info:git:*' check-for-changes true
+    zstyle ':vcs_info:git:*' stagedstr "+"    # %c で表示する文字列
+    zstyle ':vcs_info:git:*' unstagedstr "-"  # %u で表示する文字列
+fi
 
 
 #補完を有効に
