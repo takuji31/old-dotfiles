@@ -1,7 +1,6 @@
 _show_dirname_on_screen_title() {
   echo -ne "\ek$(basename "$(pwd)")\e\\"
 }
-precmd_functions+=_show_dirname_on_screen_title
 
 # hooks 設定
 if is-at-least 4.3.11; then
@@ -121,3 +120,29 @@ if is-at-least 4.3.11; then
     }
 
 fi
+
+autoload -Uz VCS_INFO_get_data_git
+VCS_INFO_get_data_git 2> /dev/null
+
+function _update_vcs_info_msg() {
+    local -a messages
+    local prompt
+
+    LANG=en_US.UTF-8 vcs_info
+
+    messages+=("%F{cyan}%~%f")
+    if [[ -n ${vcs_info_msg_0_} ]]; then
+        # vcs_info で情報を取得した場合
+        # $vcs_info_msg_0_ , $vcs_info_msg_1_ , $vcs_info_msg_2_ を
+        # それぞれ緑、黄色、赤で表示する
+        [[ -n "$vcs_info_msg_0_" ]] && messages+=( "%F{green}${vcs_info_msg_0_}%f" )
+        [[ -n "$vcs_info_msg_1_" ]] && messages+=( "%F{yellow}${vcs_info_msg_1_}%f" )
+        [[ -n "$vcs_info_msg_2_" ]] && messages+=( "%F{red}${vcs_info_msg_2_}%f" )
+
+    fi
+
+    # 間にスペースを入れて連結する
+    RPROMPT="${(j: :)messages}"
+}
+add-zsh-hook precmd _update_vcs_info_msg
+add-zsh-hook precmd _show_dirname_on_screen_title
