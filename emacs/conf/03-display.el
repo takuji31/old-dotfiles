@@ -160,7 +160,7 @@ are always included."
                                (eq window-system 'ns))
                       ;; フォントセットを作る
                       (let* ((fontset-name "myfonts") ; フォントセットの名前
-                             (size 16) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
+                             (size 14) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
                              (asciifont "Source Code Pro") ; ASCIIフォント
                              (jpfont "Ricty") ; 日本語フォント
                              (font (format "%s-%d:weight=normal:slant=normal" asciifont size))
