@@ -39,4 +39,4 @@ function gcm() {
     git commit -m $*
 }
 
-eval "$(hub alias -s 2>/dev/null)"
+#eval "$(hub alias -s 2>/dev/null)"
