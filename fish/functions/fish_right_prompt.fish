@@ -19,5 +19,5 @@ function fish_right_prompt --description 'Write out the right prompt'
 
 	end
 
-echo -n -s "$__fish_prompt_cwd"
+echo -n -s "$__fish_prompt_cwd" (prompt_pwd)
 end
