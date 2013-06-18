@@ -88,3 +88,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 
 [[ -e $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
+
+export ANDROID_HOME='/Applications/Android\ Studio.app/sdk';
+export _JAVA_OPTIONS='-Dfile.encoding=UTF-8 -Dgroovy.source.encoding=UTF-8'
