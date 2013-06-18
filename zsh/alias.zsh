@@ -1,8 +1,8 @@
 case "${OSTYPE}" in
-freebsd*)
+freebsd*|darwin*)
     alias ls="ls -G -w"
     ;;
-linux*|darwin*)
+linux*)
     alias ls="ls --color"
     ;;
 esac
@@ -39,4 +39,4 @@ function gcm() {
     git commit -m $*
 }
 
-eval "$(hub alias -s 2>/dev/null)"
+#eval "$(hub alias -s 2>/dev/null)"

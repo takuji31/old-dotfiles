@@ -10,3 +10,6 @@
 [submodule "emacs/public_repos/direx"]
 	path = emacs/public_repos/direx
 	url = https://github.com/m2ym/direx-el.git
+[submodule "zsh/zaw"]
+	path = zsh/zaw
+	url = git://github.com/zsh-users/zaw.git

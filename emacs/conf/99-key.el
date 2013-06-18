@@ -34,3 +34,6 @@
 
 (global-set-key (kbd "C-c C-j") 'direx-project:jump-to-project-root-other-window)
 (global-set-key (kbd "C-c j") 'dired-jump)
+
+;; Dash at point
+(global-set-key (kbd "C-c d") 'dash-at-point)
