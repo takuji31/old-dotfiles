@@ -8,6 +8,7 @@ setup:  $(HOME)/.zshenv\
         $(HOME)/.gitignore\
         $(HOME)/.dim\
         $(HOME)/.emacs.d\
+        $(HOME)/.config/fish\
 
 
 $(HOME)/.zshenv:
@@ -39,3 +40,7 @@ $(HOME)/.dim:
 
 $(HOME)/.emacs.d:
 	ln -sf `pwd`/emacs $(HOME)/.emacs.d
+
+$(HOME)/.config/fish:
+	mkdir -p $(HOME)/.config
+	ln -sf `pwd`/fish $(HOME)/.config/fish
