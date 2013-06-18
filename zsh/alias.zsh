@@ -1,8 +1,8 @@
 case "${OSTYPE}" in
-freebsd*)
+freebsd*|darwin*)
     alias ls="ls -G -w"
     ;;
-linux*|darwin*)
+linux*)
     alias ls="ls --color"
     ;;
 esac

@@ -8,7 +8,6 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
 typeset -U path
 path=(
-$(which brew && brew --prefix coreutils)/libexec/gnubin(N-/)
 $(which brew && brew --prefix ruby)/bin(N-/)
 $DOTFILES/git/bin(N-/)
 $HOME/project/bin(N-/)
