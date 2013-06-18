@@ -59,6 +59,7 @@ NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'tokuhirom/unite-git'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'aliva/vim-fish'
 
 NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
@@ -67,9 +68,8 @@ NeoBundle 'sudo.vim'
 filetype plugin indent on
 syntax enable
 
+set shell=zsh
 NeoBundleCheck
-
-set shell=bash
 
 "UTF-8の文脈依存の文字幅を全角に(という認識)
 set ambiwidth=double
