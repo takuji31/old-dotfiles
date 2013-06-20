@@ -34,3 +34,5 @@
 #	ff = false
 [include]
     path = ~/.gitconfig.local
+[diff]
+	suppressBlankEmpty = true
