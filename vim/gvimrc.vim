@@ -1,5 +1,5 @@
 colorscheme wombat256patched
 
-set guifont=Source_Code_Pro_Light:h14
+set guifont=Ricty_Regular_For_Powerline:h16
 set clipboard=autoselect,unnamed
 
