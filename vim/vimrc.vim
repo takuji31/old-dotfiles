@@ -28,7 +28,7 @@ NeoBundle 'Shougo/unite.vim'
 "NeoBundle
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
@@ -180,6 +180,9 @@ endfunc
 " .psgi,.tはperl
 autocmd BufNewFile,BufRead *.psgi set filetype=perl
 autocmd BufNewFile,BufRead *.t set filetype=perl
+
+" CocoaPods
+autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 
 " NeoComplCacheのスニペットではハードタブを使用する
 autocmd FileType snippet setlocal noexpandtab
@@ -352,8 +355,8 @@ nnoremap <Leader>gl :<C-u>Glog<CR>
 nnoremap <Leader>ga :<C-u>Gwrite<CR>
 nnoremap <Leader>gw :<C-u>Gwq<CR>
 nnoremap <Leader>gw! :<C-u>Gwq!<CR>
-nnoremap <Leader>gc :<C-u>Gcommit<CR>
-nnoremap <Leader>gC :<C-u>Git commit --amend<CR>
+nnoremap <Leader>gc :<C-u>Gcommit -v<CR>
+nnoremap <Leader>gC :<C-u>Git commit --amend -v<CR>
 nnoremap <Leader>gb :<C-u>Gblame<CR>
 nnoremap <leader>gp :<C-u>Git push
 nnoremap <leader>gP :<C-u>Git pull
