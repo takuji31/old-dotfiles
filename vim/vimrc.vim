@@ -182,7 +182,7 @@ autocmd BufNewFile,BufRead *.psgi set filetype=perl
 autocmd BufNewFile,BufRead *.t set filetype=perl
 
 " CocoaPods
-au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
+autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 
 " NeoComplCacheのスニペットではハードタブを使用する
 autocmd FileType snippet setlocal noexpandtab
