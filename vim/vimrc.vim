@@ -28,7 +28,7 @@ NeoBundle 'Shougo/unite.vim'
 "NeoBundle
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
