@@ -287,7 +287,6 @@ inoremap <expr><C-y>  neocomplete#smart_close_popup()."\<C-y>"
 inoremap <expr><C-e> pumvisible() ? neocomplete#cancel_popup() : "\<End>"
 
 noremap es :<C-u>NeoSnippetEdit<CR>
-imap <C-s>  <Plug>(neosnippet_start_unite_snippet)
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

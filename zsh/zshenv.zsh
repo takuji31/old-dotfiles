@@ -22,13 +22,7 @@ $path
 )
 
 export GIT_BIN=`which git`
-#EDITORの設定、自分で入れたvimがあればそれを使う
-if test -e /usr/local/bin/vim
-then
-    export EDITOR=/usr/local/bin/vim
-else
-    export EDITOR=vim
-fi
+export EDITOR=vim
 
 #sudo
 # -x: export SUDO_PATHも一緒に行う。
