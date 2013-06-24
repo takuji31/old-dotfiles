@@ -69,7 +69,7 @@ NeoBundle 'sudo.vim'
 filetype plugin indent on
 syntax enable
 
-set shell=zsh
+set shell=bash
 NeoBundleCheck
 
 "UTF-8の文脈依存の文字幅を全角に(という認識)
@@ -218,7 +218,9 @@ nnoremap <silent> ,h  :<C-u>Unite -buffer-name=help help<CR>
 nnoremap <silent> ,i  :<C-u>Unite -buffer-name=neobundle neobundle/install:!<CR>
 nnoremap <silent> ,l  :<C-u>Unite -buffer-name=lines line<CR>
 nnoremap <silent> ,m  :<C-u>Unite -buffer-name=menu menu:shortcut<CR>
-nnoremap <silent> ,c  :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+nnoremap <silent> ,v  :<C-u>Unite -buffer-name=mapping mapping<CR>
+nnoremap <silent> ,;  :<C-u>Unite -buffer-name=commands command<CR>
+nnoremap <silent> ,c  :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
