@@ -279,7 +279,7 @@ imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#expandable() ? "\<Plug>(ne
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
+inoremap <expr><CR> neocomplete#close_popup()."\<CR>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -314,6 +314,7 @@ let g:omni_sql_no_default_maps = 1
 " vimfiler
 " -------------------------------------------------------------------------------------
 let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_split_action = "split"
 let g:vimfiler_split_rule = "botright"
 let g:vimfiler_safe_mode_by_default = 0
 
