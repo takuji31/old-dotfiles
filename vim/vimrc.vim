@@ -61,8 +61,8 @@ NeoBundle 'tokuhirom/unite-git'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'aliva/vim-fish'
+NeoBundle 'plasticboy/vim-markdown'
 
-NeoBundle 'Markdown'
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
 
@@ -412,3 +412,14 @@ nnoremap <leader>gP :<C-u>Git pull
 " quickrun
 " -------------------------------------------------------------------------------------
 nnoremap <Leader>q :<C-u>QuickRun -args<Space>
+
+" Markdownのfoldingを無効に
+let g:vim_markdown_folding_disabled=1
+
+"Quickrunの設定
+let g:quickrun_config = {}
+let g:quickrun_config.mkd = {
+\ 'outputter': 'browser',
+\ 'type' : 'markdown/pandoc',
+\ 'cmdopt' : '-s',
+\ }
