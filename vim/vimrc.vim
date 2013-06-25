@@ -151,7 +151,7 @@ map ,ptv <Esc>:'<,'>! perltidy<CR>
 "JSONの整形
 map <Leader>j !python -m json.tool<CR>
 "Perl形式で書いたデーターをJSON化する
-vnoremap ,j !perl -MJSON::PP -w -E 'my @lines = <STDIN>; my $data = join "\n", @lines; say JSON::PP->new->utf8->pretty->encode(eval $data);'<CR>
+vnoremap ,j !perl -MJSON::PP -w -E 'binmode STDIN, ":utf8"; my @lines = <STDIN>; my $data = join "\n", @lines; say JSON::PP->new->utf8->pretty->encode(eval $data);'<CR>
 
 "オムニ補完の発動をC-Spaceに
 imap <Nul> <C-x><C-o>
