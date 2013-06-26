@@ -153,6 +153,9 @@ map <Leader>j !python -m json.tool<CR>
 "Perl形式で書いたデーターをJSON化する
 vnoremap ,j !perl -MJSON::PP -w -E 'binmode STDIN, ":utf8"; my @lines = <STDIN>; my $data = join "\n", @lines; say JSON::PP->new->utf8->pretty->encode(eval $data);'<CR>
 
+"|区切りの行からrstのGrid Tableを作るやつ
+vnoremap ,gt !rst_make_grid_table.pl<CR>
+
 "オムニ補完の発動をC-Spaceに
 imap <Nul> <C-x><C-o>
 
