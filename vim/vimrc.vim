@@ -62,6 +62,7 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'aliva/vim-fish'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'h1mesuke/vim-alignta'
 
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
