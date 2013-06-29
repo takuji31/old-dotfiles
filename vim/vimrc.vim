@@ -62,6 +62,10 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'aliva/vim-fish'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'kana/vim-smartchr'
 
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
@@ -143,6 +147,14 @@ noremap <C-A> <Home>
 
 ";と:を入れ替え
 noremap ; :
+noremap : ;
+
+"括弧の補完
+inoremap {{ {}<LEFT>
+inoremap [[ []<LEFT>
+inoremap (( ()<LEFT>
+inoremap "" ""<LEFT>
+inoremap '' ''<LEFT>
 
 "C-pで連続ペースト
 vnoremap <silent> <C-p> "0p<CR>
@@ -431,3 +443,31 @@ let g:quickrun_config.mkd = {
 \ 'type' : 'markdown/pandoc',
 \ 'cmdopt' : '-s',
 \ }
+
+" -------------------------------------------------------------------------------------
+" switch.vim
+" -------------------------------------------------------------------------------------
+nnoremap - :Switch<cr>
+
+" -------------------------------------------------------------------------------------
+" vim-easymotion
+" -------------------------------------------------------------------------------------
+" http://blog.remora.cx/2012/08/vim-easymotion.html
+" ホームポジションに近いキーを使う
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" 「;」 + 何かにマッピング
+let g:EasyMotion_leader_key="m"
+let g:EasyMotion_mapping_j = '<C-j>'
+let g:EasyMotion_mapping_k = '<C-k>'
+
+" 1 ストローク選択を優先する
+let g:EasyMotion_grouping=1
+" カラー設定変更
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
+
+" -------------------------------------------------------------------------------------
+" vim-smartchr
+" -------------------------------------------------------------------------------------
+inoremap <expr> = smartchr#one_of('=', ' = ', ' == ', ' === ')
+inoremap <expr> , smartchr#one_of(',', ', ', ' => ')
