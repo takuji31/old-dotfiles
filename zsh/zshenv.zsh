@@ -46,7 +46,7 @@ ruby_path=(
 )
 
 #Python
-typeset -xT PYTHONPATH pyhon_path
+typeset -xT PYTHONPATH python_path
 typeset -U python_path
 python_path=(
     ./lib
