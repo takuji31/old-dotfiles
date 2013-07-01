@@ -156,6 +156,9 @@ inoremap (( ()<LEFT>
 inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
 
+"C-pで連続ペースト
+vnoremap <silent> <C-p> "0p<CR>
+
 " Perltidy
 map ,pt <Esc>:%! perltidy<CR>
 map ,ptv <Esc>:'<,'>! perltidy<CR>
@@ -325,7 +328,7 @@ let g:neocomplete#sources#dictionary#doctionaries = {
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
         \ }
-    
+
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
