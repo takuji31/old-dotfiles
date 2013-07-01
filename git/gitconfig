@@ -22,7 +22,7 @@
   editor = "vim \"+e ++enc=utf-8\"" # force encoding utf-8 in log message.
   #pager = "lv -c"
 [user]
-    name = Nishibayashi Takuji
+    name = Takuji Nishibayashi
     email = takuji31@gmail.com
 [diff "cartonlock"]
     textconv = "perl -MJSON -0e \"\\$m = decode_json(<>)->{modules}; print qq(\\$_~\\$m->{\\$_}->{version}\\n) for sort keys %\\$m\""
