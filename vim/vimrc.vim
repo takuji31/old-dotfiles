@@ -191,7 +191,7 @@ hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
 "ESC2回押しで検索のハイライト消去
-nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "パス名からいいようにパッケージ名作ってくれる関数、PerlのSnippetで使ってるよ
 func! PerlPackageName()
