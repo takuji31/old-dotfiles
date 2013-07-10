@@ -307,6 +307,12 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-b> unite#do_action('tabop
 "更に下のディレクトリーをたどる
 au FileType unite inoremap <silent> <buffer> <expr> <C-r> unite#do_action('rec')
 
+" unite-grepのバックエンドをagに
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_grep_max_candidates = 200
+
 " ------------------------------------------------------
 " neocomplete
 " ------------------------------------------------------
@@ -472,3 +478,8 @@ hi EasyMotionShade  ctermbg=none ctermfg=blue
 " -------------------------------------------------------------------------------------
 inoremap <expr> = smartchr#one_of('=', ' = ', ' == ', ' === ')
 inoremap <expr> , smartchr#one_of(',', ', ', ' => ')
+
+" -------------------------------------------------------------------------------------
+" ag.vim
+" -------------------------------------------------------------------------------------
+nnoremap <Leader>ag :<C-u>Ag<Space>
