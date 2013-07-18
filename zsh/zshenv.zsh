@@ -8,17 +8,22 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
 typeset -U path
 path=(
-$(which brew && brew --prefix ruby)/bin(N-/)
 $DOTFILES/git/bin(N-/)
 $HOME/project/bin(N-/)
 $HOME/perl5/bin(N-/)
 $HOME/local/bin(N-/)
 $HOME/bin(N-/)
-$HOME/homebrew/bin(N-/)
+$HOME/Applications/MacVim.app/Contents/MacOS(N-/)
 /Applications/MacVim.app/Contents/MacOS(N-/)
+$HOME/homebrew/bin(N-/)
 /usr/local/sbin(N-/)
 /opt/local/bin(N-/)
 /usr/local/bin(N-/)
+$path
+)
+
+path=(
+$(which brew && brew --prefix ruby)/bin(N-/)
 $path
 )
 
