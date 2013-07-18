@@ -148,7 +148,7 @@ noremap <C-A> <Home>
 
 ";と:を入れ替え
 noremap ; :
-noremap : ;
+"noremap : ;
 
 "括弧の補完
 inoremap {{ {}<LEFT>
