@@ -264,8 +264,8 @@ let g:unite_source_menu_menus.shortcut = {
 
 " ここに書かれた順番のまま出力される
 let g:unite_source_menu_menus.shortcut.candidates = [
-\   [ "vimrc", $MYVIMRC ],
-\   [ "gvimrc", $MYGVIMRC ],
+\   [ "vimrc", $HOME . "/project/dotfiles/vim/vimrc.vim" ],
+\   [ "gvimrc", $HOME . "/project/dotfiles/vim/gvimrc.vim" ],
 \   [ "Unite Beautiful Attack", "Unite -auto-preview colorscheme" ],
 \]
 
