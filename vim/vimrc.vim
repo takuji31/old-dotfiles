@@ -67,6 +67,7 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'kana/vim-smartchr'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'gregsexton/gitv'
 
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
