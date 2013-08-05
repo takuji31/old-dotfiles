@@ -67,6 +67,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'kana/vim-smartchr'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'tpope/vim-abolish'
 NeoBundle 'modsound/gips-vim'
 
 "colorscheme
