@@ -59,7 +59,6 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'tokuhirom/unite-git'
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'aliva/vim-fish'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'h1mesuke/vim-alignta'
@@ -68,6 +67,10 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'kana/vim-smartchr'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'gregsexton/gitv'
+
+"colorscheme
+NeoBundle 'tomasr/molokai'
+NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
@@ -84,7 +87,7 @@ set ambiwidth=double
 "256色有効
 set t_Co=256
 "色の設定
-colorscheme smyck
+colorscheme hybrid
 "backspaceで消せる文字の設定
 set backspace=eol,indent,start
 "C言語タイプのインデントをオン
