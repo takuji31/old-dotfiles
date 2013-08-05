@@ -69,6 +69,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'modsound/gips-vim'
+NeoBundle 'kien/ctrlp.vim'
 
 "colorscheme
 NeoBundle 'tomasr/molokai'
