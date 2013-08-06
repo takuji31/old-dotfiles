@@ -59,7 +59,6 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'tokuhirom/unite-git'
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'aliva/vim-fish'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'h1mesuke/vim-alignta'
@@ -70,6 +69,13 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'tokorom/clang_complete-getopts-ios'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'modsound/gips-vim'
+NeoBundle 'kien/ctrlp.vim'
+
+"colorscheme
+NeoBundle 'tomasr/molokai'
+NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
@@ -86,7 +92,7 @@ set ambiwidth=double
 "256色有効
 set t_Co=256
 "色の設定
-colorscheme smyck
+colorscheme hybrid
 "backspaceで消せる文字の設定
 set backspace=eol,indent,start
 "C言語タイプのインデントをオン
@@ -246,6 +252,7 @@ nnoremap <silent> ,l  :<C-u>Unite -buffer-name=lines line<CR>
 nnoremap <silent> ,m  :<C-u>Unite -buffer-name=menu menu:shortcut<CR>
 nnoremap <silent> ,v  :<C-u>Unite -buffer-name=mapping mapping<CR>
 nnoremap <silent> ,;  :<C-u>Unite -buffer-name=commands command<CR>
+nnoremap <silent> ,g  :<C-u>Unite -buffer-name=grep grep<CR>
 nnoremap <silent> ,c  :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
