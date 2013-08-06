@@ -78,6 +78,7 @@ NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
+NeoBundle 'taglist.vim'
 
 filetype plugin indent on
 syntax enable
@@ -516,3 +517,8 @@ function! s:my_gitv_settings()
     nnoremap <silent><buffer> t :<C-u>windo call <SID>toggle_git_folding()<CR>1<C-w>w
 endfunction
 
+set tags=tags
+let Tlist_Show_One_File = 1 "現在編集中のソースのタグしか表示しない
+let Tlist_Exit_OnlyWiindow = 1 "taglist が最後のウインドウなら vim を閉じる
+let Tlist_Enable_Fold_Column = 1 " 折り畳み
+map <silent> <leader>tl :TlistToggle<CR>
