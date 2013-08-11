@@ -71,6 +71,10 @@ NeoBundle 'tokorom/clang_complete-getopts-ios'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'modsound/gips-vim'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'fuenor/qfixhowm'
+NeoBundle 'mattn/excitetranslate-vim'
+NeoBundle "y-uuki/unite-perl-module.vim"
+NeoBundle "y-uuki/perl-local-lib-path.vim"
 
 "colorscheme
 NeoBundle 'tomasr/molokai'
@@ -522,3 +526,8 @@ let Tlist_Show_One_File = 1 "現在編集中のソースのタグしか表示し
 let Tlist_Exit_OnlyWiindow = 1 "taglist が最後のウインドウなら vim を閉じる
 let Tlist_Enable_Fold_Column = 1 " 折り畳み
 map <silent> <leader>tl :TlistToggle<CR>
+
+" -------------------------------------------------------------------------------------
+" perl-local-lib-path.vim
+" -------------------------------------------------------------------------------------
+autocmd FileType perl PerlLocalLibPath
