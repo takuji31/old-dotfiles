@@ -1,6 +1,6 @@
 colorscheme hybrid
 
-set guifont=Ricty_Regular_For_Powerline:h14
+set guifont=Ricty_Regular_For_Powerline:h18
 set clipboard=autoselect,unnamed
 
 let tlist_objc_settings='objc;P:protocols;i:interfaces;I:implementations;M:instance methods;C:implementation methods;Z:protocol methods'
