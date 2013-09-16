@@ -6,8 +6,11 @@ export LANGUAGE="ja_JP.UTF-8:en_US.UTF-8:en_US:en_GB:en"
 link=`ls -l ~/.zshrc | sed -e "s/^l.*-> //"`
 export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
+[[ -e /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
+
 typeset -U path
 path=(
+$HOME/local/$(cat $HOME/local/.xbuild-perl-version)/bin(N-/)
 $DOTFILES/git/bin(N-/)
 $HOME/project/bin(N-/)
 $HOME/perl5/bin(N-/)
@@ -19,11 +22,6 @@ $HOME/homebrew/bin(N-/)
 /usr/local/sbin(N-/)
 /opt/local/bin(N-/)
 /usr/local/bin(N-/)
-$path
-)
-
-path=(
-$(which brew && brew --prefix ruby)/bin(N-/)
 $path
 )
 
@@ -83,9 +81,6 @@ export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
 
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 
 [[ -e $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
 
