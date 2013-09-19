@@ -3,6 +3,8 @@ colorscheme hybrid
 set guifont=Ricty_Regular_For_Powerline:h18
 set clipboard=autoselect,unnamed
 
+set lines=90 columns=200
+
 let tlist_objc_settings='objc;P:protocols;i:interfaces;I:implementations;M:instance methods;C:implementation methods;Z:protocol methods'
 
 " -------------------------------------------------------------------------------------
