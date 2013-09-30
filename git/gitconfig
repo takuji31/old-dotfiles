@@ -36,3 +36,4 @@
     path = ~/.gitconfig.local
 [diff]
 	suppressBlankEmpty = true
+	algorithm = histogram
