@@ -75,6 +75,8 @@ NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'mattn/excitetranslate-vim'
 NeoBundle "y-uuki/unite-perl-module.vim"
 NeoBundle "y-uuki/perl-local-lib-path.vim"
+NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'rizzatti/dash.vim'
 
 "colorscheme
 NeoBundle 'tomasr/molokai'
