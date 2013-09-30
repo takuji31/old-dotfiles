@@ -9,7 +9,6 @@ setup:  $(HOME)/.zshenv\
         $(HOME)/.dim\
         $(HOME)/.emacs.d\
         $(HOME)/.config/fish\
-        $(HOME)/.config/powerline\
 
 
 $(HOME)/.zshenv:
@@ -45,7 +44,3 @@ $(HOME)/.emacs.d:
 $(HOME)/.config/fish:
 	mkdir -p $(HOME)/.config
 	ln -sf `pwd`/fish $(HOME)/.config/fish
-
-$(HOME)/.config/powerline:
-	mkdir -p $(HOME)/.config
-	ln -sf `pwd`/powerline $(HOME)/.config/powerline
