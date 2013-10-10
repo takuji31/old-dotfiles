@@ -258,7 +258,7 @@ nnoremap <silent> ,l  :<C-u>Unite -buffer-name=lines line<CR>
 nnoremap <silent> ,m  :<C-u>Unite -buffer-name=menu menu:shortcut<CR>
 nnoremap <silent> ,v  :<C-u>Unite -buffer-name=mapping mapping<CR>
 nnoremap <silent> ,;  :<C-u>Unite -buffer-name=commands command<CR>
-nnoremap <silent> ,g  :<C-u>Unite -buffer-name=grep grep<CR>
+nnoremap <silent> ,g  :<C-u>Unite -buffer-name=grep grep:.<CR>
 nnoremap <silent> ,c  :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
