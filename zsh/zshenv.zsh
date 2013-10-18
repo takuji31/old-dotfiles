@@ -25,7 +25,10 @@ $HOME/homebrew/bin(N-/)
 /usr/local/bin(N-/)
 $path
 )
-
+path=(
+    $(which brew && brew --prefix ruby)/bin(N-/)
+    $path
+)
 export GIT_BIN=`which git`
 export EDITOR=vim
 
@@ -48,14 +51,6 @@ typeset -xT RUBYLIB ruby_path
 typeset -U ruby_path
 ruby_path=(
     ./lib
-)
-
-#Python
-typeset -xT PYTHONPATH python_path
-typeset -U python_path
-python_path=(
-    ./lib
-    /usr/local/lib/python2.7/site-packages(N-/)
 )
 
 #Pager
@@ -82,6 +77,8 @@ export MYSQL_PS1='\U DB:\d DATE: \D MySQL: \v  \n>\_'
 
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [[ -e $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
 
