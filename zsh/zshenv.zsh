@@ -10,7 +10,7 @@ export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
 typeset -U path
 path=(
-$HOME/local/$(cat $HOME/local/.xbuild-perl-version)/bin(N-/)
+$HOME/local/$([[ -e $HOME/local/.xbuild-perl-version ]] && cat $HOME/local/.xbuild-perl-version)/bin(N-/)
 $DOTFILES/git/bin(N-/)
 $HOME/project/bin(N-/)
 $HOME/perl5/bin(N-/)
