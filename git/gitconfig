@@ -38,3 +38,6 @@
 [diff]
 	suppressBlankEmpty = true
 	algorithm = histogram
+
+[hub]
+protocol = https
