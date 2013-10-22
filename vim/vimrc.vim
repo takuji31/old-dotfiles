@@ -176,8 +176,8 @@ inoremap '' ''<LEFT>
 vnoremap <silent> <C-p> "0p<CR>
 
 " Perltidy
-map ,pt <Esc>:%! perltidy<CR>
-map ,ptv <Esc>:'<,'>! perltidy<CR>
+map ,p <Esc>:%! perltidy<CR>
+vmap ,p <Esc>:'<,'>! perltidy<CR>
 
 "JSONの整形
 map <Leader>j !python -m json.tool<CR>
