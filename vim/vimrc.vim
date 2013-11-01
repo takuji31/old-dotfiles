@@ -50,6 +50,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'othree/eregex.vim'
+NeoBundle 'basyura/bitly.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'basyura/twibill.vim'
@@ -542,3 +543,10 @@ if &diff
     map <leader>2 :diffget BASE<CR>
     map <leader>3 :diffget REMOTE<CR>
 endif
+
+" -------------------------------------------------------------------------------------
+" TweetVim
+" -------------------------------------------------------------------------------------
+let g:tweetvim_tweet_per_page = 100
+let g:tweetvim_open_buffer_cmd = 'split'
+let g:tweetvim_display_icon = 1
