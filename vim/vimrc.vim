@@ -78,6 +78,7 @@ NeoBundle "y-uuki/unite-perl-module.vim"
 NeoBundle "y-uuki/perl-local-lib-path.vim"
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'kannokanno/previm'
 
 "colorscheme
 NeoBundle 'tomasr/molokai'
@@ -90,7 +91,7 @@ NeoBundle 'taglist.vim'
 filetype plugin indent on
 syntax enable
 
-set shell=bash
+"set shell=bash
 NeoBundleCheck
 
 "UTF-8の文脈依存の文字幅を全角に(という認識)
