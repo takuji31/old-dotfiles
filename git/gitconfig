@@ -1,43 +1,44 @@
 [alias]
-  ci = commit -v
-  co = checkout
-  br = branch
-  st = status
-  di = diff
-  df = diff --no-prefix
-  rb = rebase
-  wt = whatchanged --stat
-  new = whatchanged HEAD@{1}..HEAD --reverse --stat
-  graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%cn] %Cgreen%d%Creset %s' --all --date=short
-  logg = log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d'
-  rmall = !sh -c 'git status | grep deleted: | awk '{print $3}'  | xargs git rm'
-	delete-merged-branches = !git branch --merged | grep -v '^*' | xargs -I % git branch -d %
+    ci = commit -v
+    co = checkout
+    br = branch
+    st = status
+    di = diff
+    df = diff --no-prefix
+    rb = rebase
+    wt = whatchanged --stat
+    new = whatchanged HEAD@{1}..HEAD --reverse --stat
+    graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%cn] %Cgreen%d%Creset %s' --all --date=short
+    logg = log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d'
+    delete-merged-branches = !git branch --merged | grep -v '^*' | xargs -I % git branch -d %
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [core]
-  excludesfile = ~/.gitignore
-  editor = "vim \"+e ++enc=utf-8\"" # force encoding utf-8 in log message.
-  #pager = "lv -c"
+    excludesfile = ~/.gitignore
+    editor = "vim \"+e ++enc=utf-8\"" # force encoding utf-8 in log message.
 [user]
     name = Takuji Nishibayashi
     email = takuji31@gmail.com
 [diff "cartonlock"]
     textconv = "perl -MJSON -0e \"\\$m = decode_json(<>)->{modules}; print qq(\\$_~\\$m->{\\$_}->{version}\\n) for sort keys %\\$m\""
 [github]
-	user = takuji31
+    user = takuji31
 [push]
     default = simple
-[merge]
-#	ff = false
 [include]
     path = ~/.gitconfig.local
 [diff]
-	suppressBlankEmpty = true
-	algorithm = histogram
+    suppressBlankEmpty = true
+    algorithm = histogram
 
 [hub]
-protocol = https
+    protocol = https
+
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
