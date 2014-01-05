@@ -46,13 +46,6 @@ typeset -U sudo_path
 #            /: ディレクトリのみ残す。
 sudo_path=({/usr/local,/usr}/sbin(N-/))
 
-#Ruby
-typeset -xT RUBYLIB ruby_path
-typeset -U ruby_path
-ruby_path=(
-    ./lib
-)
-
 #Pager
 if type lv > /dev/null 2>&1; then
     export PAGER="lv"
