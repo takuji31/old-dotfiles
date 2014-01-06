@@ -1,7 +1,9 @@
 update
 upgrade
 
+tap sanemat/font || true
 tap phinze/homebrew-cask || true
+
 install brew-cask
 
 #install
@@ -13,6 +15,7 @@ install appledoc
 install clisp
 install coda-cli
 install fontforge
+install fontconfig
 install git
 install git-flow
 install git-now
@@ -41,38 +44,4 @@ install wget
 install xctool
 install zsh
 
-
-#cask
-cask install skype
-cask install appcode
-#cask install github
-cask install alfred
-cask install sourcetree
-cask install genymotion
-cask install android-studio
-cask install dropbox
-cask install coda
-cask install airdisplay
-cask install android-file-transfer
-cask install appcleaner
-cask install ccleaner
-cask install keyremap4macbook
-cask install google-chrome
-cask install kobito
-cask install google-drive
-cask install google-earth
-cask install google-web-designer
-cask install google-refine
-cask install intellij-idea-community
-cask install libreoffice
-cask install mongohub
-cask install reflector
-cask install mysql-workbench
-cask install skitch
-cask install p4merge
-cask install pckeyboardhack
-cask install sublime-text
-cask install teamviewer
-cask install virtualbox
-cask install xquartz
-cask install xtrafinder
+install --powerline ricty
