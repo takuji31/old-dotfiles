@@ -1,0 +1,4 @@
+install mongodb
+install mysql
+install nginx
+install redis

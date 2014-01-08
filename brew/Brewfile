@@ -23,13 +23,9 @@ install imagemagick
 install lv
 install mobile-shell
 install mogenerator
-install mongodb
-install mysql
-install nginx
 install nkf
 install python
 install python3
-install redis
 install ruby
 install sqlite
 install sshfs

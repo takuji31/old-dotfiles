@@ -1,4 +1,3 @@
-#cask
 cask install appcode
 cask install alfred
 cask install sourcetree
@@ -19,11 +18,9 @@ cask install libreoffice
 cask install mongohub
 cask install reflector
 cask install mysql-workbench
-cask install skitch
 cask install p4merge
 cask install pckeyboardhack
 cask install sublime-text
-cask install teamviewer
 cask install virtualbox
 cask install xquartz
 cask install xtrafinder
