@@ -6,8 +6,6 @@ export LANGUAGE="ja_JP.UTF-8:en_US.UTF-8:en_US:en_GB:en"
 link=`ls -l ~/.zshrc | sed -e "s/^l.*-> //"`
 export DOTFILES=$(cd $(dirname $link);cd ../;pwd)
 
-[[ -e /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
-
 typeset -U path
 path=(
 $HOME/local/$([[ -e $HOME/local/.xbuild-perl-version ]] && cat $HOME/local/.xbuild-perl-version)/bin(N-/)
