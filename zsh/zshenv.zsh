@@ -23,6 +23,9 @@ $HOME/homebrew/bin(N-/)
 /usr/local/sbin(N-/)
 /opt/local/bin(N-/)
 /usr/local/bin(N-/)
+/usr/sbin(N-/)
+/usr/bin(N-/)
+/bin(N-/)
 $path
 )
 path=(
