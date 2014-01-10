@@ -77,6 +77,7 @@ NeoBundle "y-uuki/perl-local-lib-path.vim"
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'itchyny/calendar.vim'
 
 "colorscheme
 NeoBundle 'tomasr/molokai'
