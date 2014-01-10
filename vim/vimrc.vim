@@ -69,8 +69,6 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'modsound/gips-vim'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'mattn/excitetranslate-vim'
 NeoBundle "y-uuki/unite-perl-module.vim"
 NeoBundle "y-uuki/perl-local-lib-path.vim"
