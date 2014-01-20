@@ -548,3 +548,9 @@ endif
 let g:tweetvim_tweet_per_page = 100
 let g:tweetvim_open_buffer_cmd = 'split'
 let g:tweetvim_display_icon = 1
+
+" -------------------------------------------------------------------------------------
+" calendar.vim
+" -------------------------------------------------------------------------------------
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
