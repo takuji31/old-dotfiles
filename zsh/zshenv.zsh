@@ -12,6 +12,7 @@ $HOME/local/$([[ -e $HOME/local/.xbuild-perl-version ]] && cat $HOME/local/.xbui
 $DOTFILES/git/bin(N-/)
 $HOME/project/bin(N-/)
 $HOME/perl5/bin(N-/)
+$HOME/local/perl/bin(N-/)
 $HOME/local/bin(N-/)
 $HOME/bin(N-/)
 "/Applications/Sublime Text.app/Contents/SharedSupport/bin"(N-/)
