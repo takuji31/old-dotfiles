@@ -39,5 +39,6 @@ install weechat
 install wget
 install xctool
 install zsh
+install haskell-platform
 
 install --powerline ricty
