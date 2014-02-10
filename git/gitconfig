@@ -44,3 +44,8 @@
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
+[merge "mergepbx"]
+    name = XCode project files merger
+    driver = mergepbx %O %A %B
+[core]
+    attributesfile = ~/.gitattributes
