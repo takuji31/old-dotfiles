@@ -6,6 +6,7 @@ setup:  $(HOME)/.zshenv\
 		$(HOME)/.tmux.conf\
         $(HOME)/.gitconfig\
         $(HOME)/.gitignore\
+        $(HOME)/.gitattributes\
         $(HOME)/.dim\
         $(HOME)/.emacs.d\
         $(HOME)/.config/fish\
@@ -34,6 +35,9 @@ $(HOME)/.gitconfig:
 
 $(HOME)/.gitignore:
 	ln -sf `pwd`/git/gitignore $(HOME)/.gitignore
+
+$(HOME)/.gitattributes:
+	ln -sf `pwd`/git/gitattributes $(HOME)/.gitattributes
 
 $(HOME)/.dim:
 	ln -sf `pwd`/dim $(HOME)/.dim

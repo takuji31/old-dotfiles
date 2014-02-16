@@ -39,4 +39,6 @@ function gcm() {
     git commit -m $*
 }
 
+function gi() { curl http://www.gitignore.io/api/$@ ;}
+
 #eval "$(hub alias -s 2>/dev/null)"
