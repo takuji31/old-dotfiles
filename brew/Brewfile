@@ -9,10 +9,8 @@ install brew-cask
 #install
 install android-ndk
 install android-sdk
-install ansible
 install ant
-install appledoc
-install clisp
+#install appledoc
 install coda-cli
 install fontforge
 install fontconfig
@@ -20,7 +18,7 @@ install git
 install git-flow
 install git-now
 install imagemagick
-install lv
+#install lv
 install mobile-shell
 install mogenerator
 install nkf
@@ -37,7 +35,7 @@ install vimpager
 install w3m
 install weechat
 install wget
-install xctool
+#install xctool
 install zsh
 install haskell-platform
 

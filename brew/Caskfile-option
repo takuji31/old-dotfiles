@@ -1,4 +1,3 @@
-cask install skype
 cask install dropbox
 cask install airdisplay
 cask install google-drive
