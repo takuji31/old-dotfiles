@@ -18,6 +18,7 @@ install git
 install git-flow
 install git-now
 install imagemagick
+install jq
 #install lv
 install mobile-shell
 install mogenerator
