@@ -17,7 +17,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 "NeoBundleに必要なものたち
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {'build' : {
+NeoBundle 'Shougo/vimproc.vim', {'build' : {
                     \'mac' : 'make -f make_mac.mak',
                     \'unix' : 'make -f make_unix.mak',
                 \},
@@ -32,9 +32,10 @@ NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'sgur/unite-git_grep'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle 'sjl/gundo.vim'
