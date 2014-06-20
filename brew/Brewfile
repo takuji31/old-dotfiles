@@ -36,7 +36,7 @@ install vimpager
 install w3m
 install weechat
 install wget
-#install xctool
+install xctool
 install zsh
 install haskell-platform
 
