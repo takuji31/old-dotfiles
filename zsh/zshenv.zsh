@@ -65,3 +65,13 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export ANDROID_HOME='/Applications/Android\ Studio.app/sdk';
 export _JAVA_OPTIONS='-Dfile.encoding=UTF-8 -Dgroovy.source.encoding=UTF-8'
+
+if [ -x "`which go`" ]; then
+    export GOROOT=`go env GOROOT`
+    export GOPATH=$HOME/go
+    path=(
+    $GOROOT/bin(N-/)
+    $GOPATH/bin(N-/)
+    $path
+    )
+fi
