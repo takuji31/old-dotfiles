@@ -167,3 +167,14 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
+function peco-src () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^S' peco-src
