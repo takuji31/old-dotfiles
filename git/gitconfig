@@ -49,3 +49,6 @@
     driver = /usr/local/bin/mergepbx %O %A %B
 [core]
     attributesfile = ~/.gitattributes
+[ghq]
+    root = ~/.ghq
+    root = ~/.go/src
