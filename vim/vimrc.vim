@@ -78,6 +78,9 @@ NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'rcmdnk/vim-markdown'
+NeoBundle 'dgryski/vim-godef'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 
 "colorscheme
 NeoBundle 'tomasr/molokai'
@@ -393,6 +396,7 @@ endif
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 "let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "ダイナミック補完要らないんだけど無効にする方法見つからなかったからとりあえずごまかす
@@ -556,3 +560,30 @@ let g:tweetvim_display_icon = 1
 " -------------------------------------------------------------------------------------
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+
+" -------------------------------------------------------------------------------------
+" golang
+" -------------------------------------------------------------------------------------
+"au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+"au FileType go compiler go
+
+let g:quickrun_config['go'] = {
+          \ 'command': 'go',
+          \ 'exec': ['%c run %s']
+          \ }
+
+""" vim-go
+let g:go_bin_path = expand("~/.go/bin")
+"let g:go_disable_autoinstall = 1
+let g:gocomplete#system_function = 'vimproc#system'
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gl :GoLint<CR>
