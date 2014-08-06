@@ -70,8 +70,8 @@ if [ -x "`which go`" ]; then
     export GOROOT=`go env GOROOT`
     export GOPATH=$HOME/.go
     path=(
-    $GOROOT/bin(N-/)
     $GOPATH/bin(N-/)
+    $GOROOT/bin(N-/)
     $path
     )
 fi
