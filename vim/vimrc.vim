@@ -341,10 +341,12 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
 let g:neocomplete#enable_smart_case = 1
 " Use camel case completion.
-let g:neocomplete#enable_camel_case_complete = 1
+let g:neocomplete#enable_camel_case_complete = 0
+let g:neocomplete#max_list = 20
+"let g:neocomplete#auto_completion_start_length = 3
 
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#syntax#min_keyword_length = 4
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " define snippets directory
@@ -369,7 +371,7 @@ inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
+"imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -380,6 +382,15 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#smart_close_popup()."\<C-y>"
 inoremap <expr><C-e> pumvisible() ? neocomplete#cancel_popup() : "\<End>"
 
+
+" For smart TAB completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ neocomplete#start_manual_complete()
+function! s:check_back_space() "{{{
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}
 noremap es :<C-u>NeoSnippetEdit<CR>
 
 " Enable omni completion.
