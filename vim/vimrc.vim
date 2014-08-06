@@ -342,11 +342,11 @@ let g:neocomplete#enable_ignore_case = 1
 let g:neocomplete#enable_smart_case = 1
 " Use camel case completion.
 let g:neocomplete#enable_camel_case_complete = 0
-let g:neocomplete#max_list = 20
-"let g:neocomplete#auto_completion_start_length = 3
+"let g:neocomplete#max_list = 20
+let g:neocomplete#auto_completion_start_length = 2
 
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 4
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " define snippets directory
@@ -575,7 +575,7 @@ let g:calendar_google_task = 1
 " -------------------------------------------------------------------------------------
 " golang
 " -------------------------------------------------------------------------------------
-"au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu
 "au FileType go compiler go
 
 let g:quickrun_config['go'] = {
